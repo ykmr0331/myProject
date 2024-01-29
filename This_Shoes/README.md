@@ -28,7 +28,6 @@
 3. 발표 담당
 
 ## 기술
-
 ﻿- Java 
 
 - JavaScript
