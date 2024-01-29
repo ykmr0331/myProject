@@ -1,5 +1,5 @@
-<%@page import="cart.Cart"%>
-<%@page import="cart.CartService"%>
+<%@page import="com.example.demo.sample.cart.domain.Cart"%>
+<%@page import="com.example.demo.sample.cart.service.Service"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" session="true"%>
     
