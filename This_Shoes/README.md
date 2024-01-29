@@ -10,9 +10,7 @@
 
 개발 인원: 8명 
 
-
 개발 목적:  교육 과정 동안 배운 MyBatis, JSP를 활용하여 Kream 쇼핑몰 사이트 모방
-
 
 개발 기간: 2023.8.16~202023.8.25
 
@@ -21,6 +19,16 @@
 팀장: 허승범
 
 팀원: 유채린, 박재찬, 최재용, 전아현, 장희주, 고범석, 박근우
+
+## 기술
+
+﻿- Java 
+- JavaScript
+-Oracle SQL
+- Oracle Database 12c
+- MyBatis
+- JSP![image](https://github.com/ykmr0331/myProject/assets/117189519/7c302d4b-612f-4a41-88de-97ddc5071c7e)
+
 
 
 
