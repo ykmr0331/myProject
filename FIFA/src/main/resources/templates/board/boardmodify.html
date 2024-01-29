@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{common/layouts/defaultLayout}" layout:fragment="Content">
+
+<head>
+	<style>
+		.layout {
+			width: 500px;
+			margin: 0 auto;
+			margin-top: 40px;
+		}
+
+		.layout input,
+		textarea {
+			width: 100%;
+			margin-top: 10px;
+			box-sizing: border-box;
+		}
+
+		textarea {
+			height: 300px;
+		}
+
+
+
+		#secret {
+			margin: 0;
+			/* Remove default margin */
+			width: 16px;
+			/* Set the width to your desired size */
+			height: 16px;
+			/* Set the height to your desired size */
+		}
+	</style>
+	<meta charset="UTF-8">
+	<title>게시물 작성폼</title>
+</head>
+
+
+
+<body>
+	<th:block layout:fragment="content">
+		<div class="layout">
+			<form th:action="@{/board/update/{id}(id = ${board.id})}" method="post">
+				<input name="title" type="text" th:value="${board.title}">
+				<textarea name="content" th:text="${board.content}"></textarea>
+				<div style="display: flex; align-items: center;">
+					<!-- 비밀글을 위한 체크박스 추가 -->
+					<label for="secret" style="display: inline-block;">비밀글 여부</label>&nbsp;
+					<input type="checkbox" id="secret" name="secret">
+				</div>
+				<button>수정</button>
+			</form>
+		</div>
+	</th:block>
+
+	<th:block layout:fragment="script">
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+	</th:block>
+
+</body>
+
+</html>

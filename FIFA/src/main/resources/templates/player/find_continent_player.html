@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{common/layouts/defaultLayout}" layout:fragment="Content">
+
+<head>
+	<meta charset="UTF-8">
+	<title>선수찾기(대륙선택)</title>
+
+	<style>
+		/* 스타일링을 위한 CSS */
+
+		/* search-form 클래스의 요소만 중앙 정렬 */
+
+		.input-group input[type="text"] {
+			flex: 1;
+			/* 입력 필드가 가능한한 최대 너비 차지하도록 설정 */
+			padding: 10px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			font-size: 16px;
+			margin-right: 5px;
+			/* 입력 필드와 버튼 간 간격 조정 */
+		}
+
+		.input-group button {
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			background-color: #4CAF50;
+			color: white;
+			font-size: 16px;
+			cursor: pointer;
+			transition: background-color 0.3s ease;
+		}
+
+		.search-form {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin-bottom: 20px;
+			width: 100%;
+			max-width: 400px;
+			margin-left: 900px;
+		}
+
+
+
+		input[type="text"] {
+			padding: 10px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			width: 350px;
+			font-size: 16px;
+		}
+
+		button {
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			background-color: #4CAF50;
+			color: white;
+			font-size: 16px;
+			cursor: pointer;
+			transition: background-color 0.3s ease;
+		}
+
+		button:hover {
+			background-color: #45a049;
+		}
+
+		.text-center {
+			text-align: center;
+		}
+
+		.continent-buttons {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin-top: 30px;
+		}
+
+		.continent-buttons a {
+			display: block;
+			width: 200px;
+			padding: 10px;
+			margin: 10px;
+			text-align: center;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			text-decoration: none;
+			color: #333;
+			background-color: #f9f9f9;
+			transition: background-color 0.3s ease;
+		}
+
+		.continent-buttons a:hover {
+			background-color: #e0e0e0;
+		}
+	</style>
+</head>
+
+
+
+<body>
+
+
+
+	<div class="search-form">
+		<form action="/player_search" method="GET" class="search">
+			<div class="input-group">
+				<input name="keyword" type="text" placeholder="enter the name">
+				<button type="submit">Search</button>
+			</div>
+		</form>
+
+	</div>
+
+	<div class="text-center">
+		<h1>Please, Select Continent</h1>
+	</div>
+
+	<div class="continent-buttons" th:each="continentDto : ${continentDtoList}">
+		<!-- 아프리카, 유럽, 아시아, 북아메리카, 남아메리카, 오세아니아 버튼 -->
+		<a href="find_country_player.html" th:href="@{'/find_country_player'+${continentDto.id}}"
+			th:text="${continentDto.name}">{name}</a>
+
+	</div>
+
+	<br>
+	<br>
+	<br>
+	<br>
+
+
+</body>
+
+</html>

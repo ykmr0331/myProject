@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{common/layouts/defaultLayout}" layout:fragment="Content">
+
+<head>
+	<meta charset="UTF-8">
+	<title>관리자권한으로 회원찾기</title>
+	
+	
+<style>
+		/* Custom styles for sidebar */
+		#sidebar {
+			position: fixed;
+			width: 250px;
+			height: 100%;
+			background: #343a40;
+			color: white;
+			padding-top: 20px;
+		}
+
+		#sidebar .sidebar-header {
+			text-align: center;
+		}
+
+		#sidebar ul.components {
+			padding: 20px 0;
+		}
+
+		#sidebar ul li a {
+			padding: 10px;
+			font-size: 1.2em;
+			text-decoration: none;
+			color: white;
+			display: block;
+		}
+
+		#sidebar ul li a i.fas.fa-exchange-alt {
+			font-size: 0.8em;
+		}
+
+		#sidebar ul li a:hover {
+			background: #575757;
+		}
+
+		#content {
+			margin-left: 250px;
+			padding: 20px;
+		}
+
+
+	</style>
+</head>
+
+<body>
+	<div class="col-lg-8">
+		<div class="padding-top-2x mt-2 hidden-lg-up"></div>
+		<div class="table-responsive">
+			<table class="table table-hover margin-bottom-none">
+				<thead>
+					<tr>
+						<th>Member Id</th>
+						<th>Member userName</th>
+						<th>Member Email</th>
+					</tr>
+			</thead>
+				<tbody>
+					
+					<tr th:each="clubShowDto : ${clubShowDtoList}" th:each-sort="${clubShowDto.id}">
+
+						<td><img class = "club-image" th:src="${clubShowDto.img}" alt="클럽 로고" style="max-width: 214px; max-height: 128px;" /></td>
+						<td th:text="${clubShowDto.name}" style="max-width: 150px;">클럽 이름</td>
+						<td th:text="${clubShowDto.countryName}" style="max-width: 150px;">소속국가</td>
+						<td th:text="|${#numbers.formatInteger(clubShowDto.funds, 0, 'COMMA')}원|" style="max-width: 150px;">자금</td>
+								
+
+					</tr>
+				</tbody>
+				
+			</table>
+			
+			<br><br><br>
+		</div>
+		<hr>
+	</div>
+
+
+</body>
+
+</html>

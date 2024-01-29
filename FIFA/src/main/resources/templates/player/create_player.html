@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{common/layouts/defaultLayout}" layout:fragment="Content">
+
+<head>
+
+	<style>
+				/* Custom styles for sidebar */
+		#sidebar {
+			position: fixed;
+			width: 250px;
+			height: 100%;
+			background: #343a40;
+			color: white;
+			padding-top: 20px;
+		}
+
+		#sidebar .sidebar-header {
+			text-align: center;
+		}
+
+		#sidebar ul.components {
+			padding: 20px 0;
+		}
+
+		#sidebar ul li a {
+			padding: 10px;
+			font-size: 1.2em;
+			text-decoration: none;
+			color: white;
+			display: block;
+		}
+
+		#sidebar ul li a i.fas.fa-exchange-alt {
+			font-size: 0.8em;
+		}
+
+		#sidebar ul li a:hover {
+			background: #575757;
+		}
+
+		#content {
+			margin-left: 250px;
+			padding: 20px;
+		}
+		
+		
+		
+		#img_info {
+			color: deepskyblue;
+			font-weight: bold;
+			font-style: italic;
+		}
+
+		#fileInput {
+			border: none;
+			padding: 10px;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+			transition: box-shadow 0.3s ease;
+		}
+
+		#uploadButton {
+			padding: 10px;
+			background-color: #3498db;
+			color: #fff;
+			border: none;
+			cursor: pointer;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+			transition: box-shadow 0.3s ease;
+		}
+
+		#uploadButton:hover,
+		#fileInput:hover {
+			box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+		}
+	</style>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+
+</head>
+
+<body>
+	
+	
+		<!-- Sidebar -->
+	<nav id="sidebar">
+		<div class="sidebar-header">
+			<h3>관리자 메뉴</h3>
+		</div>
+
+		<ul class="list-unstyled components">
+			<li>
+				<a href="#playerSubMenu" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+					<i class="fas fa-user"></i> 선수관리
+				</a>
+				<ul class="collapse list-unstyled" id="playerSubMenu">
+					<li>
+						<a href="create_player"><i class="fas fa-exchange-alt"> 선수생성</i></a>
+					</li>
+					<!-- 다른 선수 메뉴 추가 -->
+				</ul>
+			</li>
+			<li>
+				<a href="#clubSubMenu" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+					<i class="fas fa-building"></i> 클럽관리
+				</a>
+				<ul class="collapse list-unstyled" id="clubSubMenu">
+					<li>
+						<a href="create_club"><i class="fas fa-exchange-alt"> 클럽생성</i></a>
+					</li>
+					<!-- 다른 클럽 메뉴 추가 -->
+				</ul>
+			</li>
+			<li>
+				<a href="#transferMenu" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+					<i class="fas fa-exchange-alt"></i> 이적관리
+				</a>
+				<ul class="collapse list-unstyled" id="transferMenu">
+					<li>
+						<a href="create_transfer"><i class="fas fa-exchange-alt"> 이적생성</i></a>
+					</li>
+					<!-- 다른 클럽 메뉴 추가 -->
+				</ul>
+			</li>
+			
+			<li>
+				<a href="#boardAdmin" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+					<i class="fas fa-clipboard"></i> 게시판관리</a>
+				<ul class="collapse list-unstyled" id="boardAdmin">
+					<li>
+						<a href="board_member"><i class="fas fa-exchange-alt"> 회원별 게시글보기</i></a>
+					</li>
+					<!-- 다른 클럽 메뉴 추가 -->
+				</ul>
+			</li>
+			
+			<li>
+				<a href="#memberAdmin" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+					<i class="fas fa-users"></i> 회원관리</a>
+				<ul class="collapse list-unstyled" id="memberAdmin">
+					<li>
+						<a href="admin_member"><i class="fas fa-exchange-alt"> 회원정보</i></a>
+					</li>
+					<!-- 다른 클럽 메뉴 추가 -->
+				</ul>
+			</li>
+		</ul>
+	</nav>
+
+	<div id="content">
+	
+	<th:block layout:fragment="content">
+		<!-- Page Content-->
+		<div class="container padding-bottom-3x mb-2"
+			style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+			<div class="col-md-6">
+				<div class="padding-top-3x hidden-md-up"></div>
+				<h3 class="margin-bottom-1x">선수 생성 페이지</h3>
+				<br>
+
+
+				<form id="frm" name="frm" method="post" action="/register/action" enctype="multipart/form-data">
+					<div class="col-12">
+						<div class="form-group">
+							<label id="img_info" for="img_information"th:text="${complete}">이미지를 먼저 업로드해주세요</label>
+							<br>
+							<input type="file" name="사진 업로드" id="fileInput" />
+							<Button id='uploadButton' type="submit">업로드 하기</Button>
+
+						</div>
+					</div>
+				</form>
+
+				<br>
+
+
+				<form class="row" name="f" id="form-account-regist" method="post">
+
+
+					<div class="col-sm-6">
+						<div class="form-group">
+							<label for="reg-playerName">선수이름</label>
+							<input class="form-control" name="playerName" type="text" id="reg_playerName"
+								 required>
+						</div>
+					</div>
+
+
+					<div class="col-sm-6">
+						<div class="form-group" id="position" name="position">
+							<label for="reg-position">포지션</label>
+							<input class="form-control" name="position" type="position" placeholder="ex) forward"
+								id="reg_position"  required>
+						</div>
+					</div>
+
+					<br>
+
+					<input type="text" id="marketValue" name="marketValue" style="display: none" value="">
+					<div class="col-sm-6">
+						<div class="form-group">
+							<label for="reg-pass">시장가치</label>
+							<input class="form-control" name="marketValue" type="marketValue" id="reg_marketValue"
+								 required>
+						</div>
+					</div>
+
+
+
+
+
+
+					<!-- 국가 선택 드롭다운 메뉴 -->
+					<div class="col-sm-6">
+						<div class="form-group">
+							<label for="reg-country">선수 국적 선택</label>
+							<select class="form-select" id="reg_country" name="country">
+								<option value="">국적을 선택하세요</option>
+								<!-- Thymeleaf를 이용하여 컨트롤러에서 가져온 국가 데이터를 추가 -->
+								<th:block th:each="CountryDto : ${allCountryDtoList}">
+									<option th:value="${CountryDto.id}" th:text="${CountryDto.name}"
+										></option>
+								</th:block>
+							</select>
+						</div>
+					</div>
+
+
+					<!-- 클럽 선택 드롭다운 메뉴 -->
+					<div class="col-sm-6">
+						<div class="form-group">
+							<label for="reg-club">클럽 선택</label>
+							<select class="form-select" id="reg_club" name="club">
+								<option value="">클럽을 선택하세요</option>
+								<!-- Thymeleaf를 이용하여 컨트롤러에서 가져온 국가 데이터를 추가 -->
+								<th:block th:each="ClubShowDto : ${clubShowDtoList}">
+									<option th:value="${ClubShowDto.id}" th:text="${ClubShowDto.name}"></option>
+								</th:block>
+							</select>
+						</div>
+					</div>
+
+
+				</form>
+
+
+				<br>
+
+				<div class="col-12 text-center text-sm-right">
+					<button class="btn-account-register btn btn-primary margin-bottom-none" id="join-action-btn"
+						type="submit">선수생성</button>
+					<button class="btn-account-reset btn btn-primary margin-bottom-none" type="reset">초기화</button>
+				</div>
+
+			</div>
+		</div>
+	</th:block>
+	</div>
+
+
+	<th:block layout:fragment="script">
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+		<script type="text/javascript">
+
+
+
+
+
+
+			// 회원가입 버튼 눌렀을 때 1
+			document.addEventListener('DOMContentLoaded', function () {
+				// '회원가입' 버튼 클릭 시 이벤트 핸들러
+				document.getElementById('join-action-btn').addEventListener('click', function (event) {
+					event.preventDefault(); // 기본 동작 방지 (폼 전송 방지)
+
+					// 데이터를 이곳에서 수집하거나 생성
+					let formData = {
+						name: document.getElementById('reg_playerName').value,
+						countryId: document.getElementById('reg_country').value,
+						clubId: document.getElementById('reg_club').value,
+						position: document.getElementById('reg_position').value,
+						marketValue: document.getElementById('reg_marketValue').value
+
+						// 비밀번호 등 다른 필드도 이곳에 추가할 수 있습니다
+					};
+
+					// member_join_action_rest 함수 호출
+					create_player_action(formData);
+				});
+			});
+
+
+
+			// 회원가입 버튼 눌렀을 때 2
+			let create_player_action = function (data) {
+
+				console.log('data는 ' + data.name)
+				console.log('data는 ' + data.countryId)
+				console.log('data는 ' + data.clubId)
+				console.log('data는 ' + data.position)
+				console.log('data는 ' + data.marketValue)
+				$.ajax({
+					url: '/player/create_player_action',
+					method: 'POST',
+					data: JSON.stringify(data),
+					dataType: 'json',
+					contentType: 'application/json;charset=UTF-8',
+
+					success: function (resultJson) {
+						if (resultJson.result == 1) {
+							console.log('sUserId가 null입니다.');
+						} else {
+							location.href = "/create_player_complete";
+							console.log('@@@@@@@@@@@@성공함');
+							console.log('resultJson.result는 ' + resultJson.result)
+						}
+					},
+
+					error: function () {
+						alert("회원가입 실패 다시 시도해 주십시요.");
+					}
+				})
+			};
+
+
+
+
+
+
+
+		</script>
+	</th:block>
+
+
+</body>
+
+</html>

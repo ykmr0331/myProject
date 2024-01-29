@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{common/layouts/defaultLayout}" layout:fragment="Content">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+</head>
+
+<body>
+	<th:block layout:fragment="content">
+		<!-- Page Content-->
+		<div class="container padding-bottom-3x mb-2"
+			style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+			<div class="col-md-6">
+				<div class="padding-top-3x hidden-md-up"></div>
+				<h3 class="margin-bottom-1x">회원가입 페이지</h3>
+
+
+				<form class="row" name="f" id="form-account-regist" method="post">
+
+
+					<div class="col-sm-6">
+						<div class="form-group">
+							<label for="reg-username">아이디</label>
+							<input class="form-control" name="userName" type="text" id="reg-username" required>
+						</div>
+					</div>
+
+
+					<div class="col-sm-6">
+						<div class="form-group" id="mail_input" name="mail_input">
+							<label for="reg-mail">E-mail 주소</label>
+							<input class="form-control" name="email" type="text" placeholder="ex) email@google.com"
+								id="mail" required>
+							<button type="button" id="sendBtn" name="sendBtn">인증번호 보내기</button>
+						</div>
+
+						<div id="mail_number" name="mail_number" style="display: none">
+							<input type="text" name="number" id="number" style="width:250px; margin-top: -10px"
+								placeholder="인증번호 입력">
+							<button type="button" name="confirmBtn" id="confirmBtn">이메일 인증</button>
+						</div>
+					</div>
+
+
+
+
+
+					<br>
+
+					<input type="text" id="Confirm" name="Confirm" style="display: none" value="">
+					<div class="col-sm-6">
+						<div class="form-group">
+							<label for="reg-pass">비밀번호</label>
+							<input class="form-control" name="password" type="password" id="reg-pass" required>
+							<input type="checkbox" id="show-password"> 비밀번호 표시
+						</div>
+					</div>
+
+
+
+					<div class="col-sm-6">
+						<div class="form-group">
+							<label for="reg-pass-confirm">비밀번호 확인</label>
+							<input class="form-control" name="password2" type="password" id="reg-pass-confirm" required>
+						</div>
+					</div>
+					<br>
+
+					<div class="row justify-content-center">
+						<div class="col-3 text-center text-sm-right">
+							<button class="btn-account-register btn btn-primary margin-bottom-none" id="join-action-btn"
+								type="submit">회원가입</button>
+						</div>
+
+						<div class="col-3 text-center text-sm-right">
+							<a href="/member_join_form" class="btn btn-primary">
+								<i class="bi bi-arrow-repeat"></i> 초기화
+							</a>
+						</div>
+					</div>
+				</form>
+
+			</div>
+		</div>
+	</th:block>
+
+
+
+
+
+
+
+
+
+
+
+	<th:block layout:fragment="script">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+		<script type="text/javascript">
+
+
+
+
+
+			//이건 회원가입 버튼
+			document.addEventListener('DOMContentLoaded', function () {
+
+				// '회원가입' 버튼 클릭 시 이벤트 핸들러
+				//1.인증번호 보내기 버튼
+				document.getElementById('sendBtn').addEventListener('click', function (event) {
+					document.getElementById("mail").readOnly = true;
+					event.preventDefault(); // 기본 동작 방지 (폼 전송 방지)
+
+
+					// 데이터를 이곳에서 수집하거나 생성
+					let mailValue = document.getElementById('mail').value;
+					if (!mailValue) {
+						alert('이메일 형식으로 입력해주세요');
+						return; // 이메일 값이 없으면 함수를 여기서 끝냅니다.
+					}
+
+					let formData = {
+						mail: mailValue,
+					};
+					console.log('@@@@@@@@@@formData.mail는 ' + formData.mail)
+					// member_join_action_rest 함수 호출
+					mailConfirm(formData);
+				});
+			});
+
+			let outResultJson;
+
+			//
+			let mailConfirm = function (data) {
+				console.log('mailConfirm 들어옴~~~~')
+				$("#mail_number").css("display", "block"); // 여기서 드러나게한다, 이메일 인증창을
+
+				$.ajax({
+					url: "/restMail/confirm",
+					type: "POST",
+					data: "mail=" + encodeURIComponent(data.mail), // 주소 형식으로 데이터 전송
+					contentType: 'application/x-www-form-urlencoded;charset=UTF-8',
+
+					success: function (resultJson) {
+						if (resultJson.restsult == 1) {
+							console.log('@@@@@@@@@@@resultJson.msg는 ' + resultJson.msg);
+						} else if (resultJson.restsult == 2) {
+							console.log('@@@@@@@@@@@resultJson.msg는 ' + resultJson.msg);
+						} else {
+							console.log('@@@@@@@@@@success함');
+							console.log('resultJson.result는 ' + resultJson.result);
+							alert("인증번호 발송");
+							outResultJson = resultJson;
+						}
+
+					},
+
+					error: function () {
+						console.log('@@@@@@@@@@@error남');
+						console.log('data는 ' + data.mail);
+						console.log('data의 타입은 ' + typeof (data.mail));
+						alert("이메일 인증요청 보내는데 실패했습니다.");
+					}
+
+				}
+				)
+			};
+
+
+			// 2.이메일 인증 버튼(인증번호 받은 후에)
+			document.addEventListener('DOMContentLoaded', function () {
+				// '회원가입' 버튼 클릭 시 이벤트 핸들러
+
+				document.getElementById('confirmBtn').addEventListener('click', function (event) {
+					event.preventDefault(); // 기본 동작 방지 (폼 전송 방지)
+					document.getElementById("mail").readOnly = true;
+
+					var number1 = $("#number").val(); // 메일 보고 입력하는 곳
+
+					if (number1 == outResultJson.code) {
+						document.getElementById("mail").readOnly = true;
+						document.getElementById('confirmBtn').innerText = '이메일 인증 완료';
+						window.confirm("인증되었습니다."); // 알림창을 띄우고 확인 버튼을 누르면 다음 코드가 실행됨
+						// 인증되면 이메일 입력 필드를 읽기 전용으로 변경
+					} else {
+						document.getElementById("mail").readOnly = false;
+						alert("번호가 다릅니다.");
+					}
+				});
+
+
+				if (number1 == outResultJson.code) {
+					document.getElementById("mail").readOnly = true;
+				}
+			});
+
+
+
+
+
+
+			//회원가입 버튼 누른 후 ajax처리(위에서부터 이어지는거임)
+			let member_join_action_rest = function (data) {
+
+				let passwordConfirm = $('#reg-pass-confirm').val() //비밀번호 확인 value
+
+				console.log('data는 ' + data.userName)
+				console.log('data는 ' + data.email)
+				console.log('data는 ' + data.password)
+
+				var userName = $("#reg-username").val(); // 아이디 입력 값 가져오기
+				var pass = $("#reg-pass").val();
+				var passConfirm = $("#reg-pass-confirm").val();
+
+				if (!userName.trim()) { // 아이디에 요소가 존재 안할 때
+					alert("아이디를 입력해주세요");
+					return;
+				} else if (document.getElementById('confirmBtn').innerText != '이메일 인증 완료') {
+					alert("이메일 인증이 아직 완료되지 않았습니다.");
+					return;
+
+				} else if (!pass.trim()) {
+					alert("비밀번호를 입력해주세요");
+					return;
+				} else if (!passConfirm.trim()) {
+					alert("비밀번호 확인을 입력해주세요");
+					return;
+				} else if (data.password != passwordConfirm) {
+					console.log('비밀번호가 일치하지 않습니다.');
+					$('#reg-username').css('border', '0.5px solid green');
+					$('#mail').css('border', '0.5px solid green');
+
+					$('#reg-pass-confirm').css('border', '0.5px solid orange')
+					$('#reg-pass-confirm').tooltip({'trigger': 'hover', 'title': '비밀번호가 일치하지 않습니다.'});
+					$('#reg-pass-confirm').tooltip('show');
+					setTimeout(function () {
+						$('#reg-pass-confirm').tooltip('dispose');
+					}, 2000);
+					return;
+
+				} else {
+					console.log('모두 입력되었습니다.');
+				}
+
+
+				$.ajax({
+					url: '/member/join_rest',
+					method: 'POST',
+					data: JSON.stringify(data),
+					dataType: 'json',
+					contentType: 'application/json;charset=UTF-8',
+
+					success: function (resultJson) {
+						if (resultJson.result == 1) {// 사용중인 아이디입니다. 인 경우
+							console.log('	사용중인 아이디입니다.');
+							$('#reg-username').css('border', '0.5px solid orange')
+							$('#reg-username').tooltip({'trigger': 'hover', 'title': resultJson.msg});
+							console.log('@@@@@@@@@@@resultJson.msg는 ' + resultJson.msg)
+							$('#reg-username').tooltip('show');
+							setTimeout(function () {
+								$('#reg-username').tooltip('dispose');
+							}, 2000);
+						} else if (resultJson.result == 2) {
+							console.log('사용중인 이메일입니다.');
+							$('#reg-username').css('border', '0.5px solid green');
+							$('#mail').css('border', '0.5px solid orange');
+							$('#mail').tooltip({'trigger': 'hover', 'title': resultJson.msg});
+							console.log('@@@@@@@@@@@resultJson.msg는 ' + resultJson.msg)
+							$('#mail').tooltip('show');
+							setTimeout(function () {
+								$('#mail').tooltip('dispose');
+							}, 2000);
+
+						} else if (data.password != passwordConfirm) {
+							console.log('비밀번호가 일치하지 않습니다.');
+							$('#reg-username').css('border', '0.5px solid green');
+							$('#mail').css('border', '0.5px solid green');
+
+							$('#reg-pass-confirm').css('border', '0.5px solid orange')
+							$('#reg-pass-confirm').tooltip({'trigger': 'hover', 'title': '비밀번호가 일치하지 않습니다.'});
+							console.log('@@@@@@@@@@@resultJson.msg는 ' + resultJson.msg)
+							$('#reg-pass-confirm').tooltip('show');
+							setTimeout(function () {
+								$('#reg-pass-confirm').tooltip('dispose');
+							}, 2000);
+						} else {
+							location.href = "/member_join_complete_page";
+						}
+					},
+
+					error: function () {
+						alert("회원가입에 실패했습니다.");
+					}
+				})
+			};
+
+
+
+
+
+			document.addEventListener('DOMContentLoaded', function () {
+				// '회원가입' 버튼 클릭 시 이벤트 핸들러
+				document.getElementById('join-action-btn').addEventListener('click', function (event) {
+					event.preventDefault(); // 기본 동작 방지 (폼 전송 방지)
+
+					// 데이터를 이곳에서 수집하거나 생성
+					let formData = {
+						userName: document.getElementById('reg-username').value,
+						email: document.getElementById('mail').value,
+						password: document.getElementById('reg-pass').value
+						// 비밀번호 등 다른 필드도 이곳에 추가할 수 있습니다
+					};
+
+					// member_join_action_rest 함수 호출
+					member_join_action_rest(formData);
+				});
+			});
+
+
+		</script>
+	</th:block>
+
+
+</body>
+
+</html>

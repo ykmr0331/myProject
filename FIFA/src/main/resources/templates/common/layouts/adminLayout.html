@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head th:replace="common/fragments/config :: ConfigFragment">
+	<title layout:title-pattern="$LAYOUT_TITLE : $CONTENT_TITLE">관리자 페이지</title>
+	<!-- 추가적인 head 설정이 필요하다면 여기에 추가 -->
+</head>
+
+<body>
+
+	<!-- Header 영역을 참조합니다. -->
+	<header th:replace="common/fragments/admin_header :: adminHeaderFragment"></header>
+
+
+	<!--Content 내용 영역을 참조합니다-->
+	<th:block layout:fragment="Content">
+		 
+	</th:block>
+
+	<!-- Footer 영역을 참조합니다 -->
+	<footer th:replace="common/fragments/footer :: FooterFragment"></footer>
+
+	<!-- Script 내용 영역을 참조합니다 -->
+	<th:block layout:fragment="script">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<!-- Footer -->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+		<!-- Core theme JS-->
+		<script src="js/scripts.js"></script>
+		<!-- 추가적인 script 설정이 필요하다면 여기에 추가 -->
+	</th:block>
+</body>
+
+</html>

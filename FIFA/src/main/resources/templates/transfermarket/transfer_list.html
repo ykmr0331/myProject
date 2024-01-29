@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{common/layouts/defaultLayout}" layout:fragment="Content">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Transfer_List</title>
+
+	<style>
+		.table tbody tr td {
+			background-color: #f5f5f5;
+			/* 옅은 회색으로 설정하세요 */
+		}
+
+		.table th {
+			background-color: #555;
+			color: #fff;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="col-lg-8">
+		<div class="padding-top-2x mt-2 hidden-lg-up"></div>
+		<div class="table-responsive">
+			<table class="table table-hover margin-bottom-none">
+				<thead>
+					<tr>
+						<th>Player</th>
+						<th>Origin Club</th>
+						<th>New Club</th>
+						<th>TransferFee</th>
+						<th>createDate</th>
+					</tr>
+			</thead>
+				<tbody>
+					
+					<tr th:each="transferMarketFindDto : ${transferMarketFindDtoList}" th:each-sort="${transferMarketFindDto.id}">
+
+
+						<td th:text="${transferMarketFindDto.playerName}" style="max-width: 150px;">Player</td>
+						<td th:text="${transferMarketFindDto.previousClubName}" style="max-width: 150px;">Origin Club</td>
+						<td th:text="${transferMarketFindDto.newClubName}" style="max-width: 150px;">New Club</td>
+						<td th:text="|${#numbers.formatInteger(transferMarketFindDto.transferFee, 0, 'COMMA')}원|" style="max-width: 150px;">TransferFee</td>
+						<td th:text="${#strings.substring(transferMarketFindDto.createDate, 0, 10)}" style="max-width: 150px;">create Date</td>
+
+
+
+
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<hr>
+	</div>
+
+
+</body>
+
+</html>

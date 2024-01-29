@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" 
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{common/layouts/defaultLayout}" 
+	layout:fragment="Content">
+
+<head>
+	<meta charset="UTF-8">
+	<title>선수찾기(국가선택)</title>
+
+	<style>
+		/* 스타일링을 위한 CSS */
+
+
+		.text-center {
+			text-align: center;
+		}
+
+		.country-buttons {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin-top: 30px;
+		}
+
+		.country-buttons a {
+			display: block;
+			width: 200px;
+			padding: 10px;
+			margin: 10px;
+			text-align: center;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			text-decoration: none;
+			color: #333;
+			background-color: #f9f9f9;
+			transition: background-color 0.3s ease;
+		}
+
+		.country-buttons a:hover {
+			background-color: #e0e0e0;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="text-center">
+		<h1>Please, Select Country</h1>
+	</div>
+
+
+	<div class="country-buttons" th:each="countryDto : ${countryIncludeContinent}">
+		<!-- 아프리카, 유럽, 아시아, 북아메리카, 남아메리카, 오세아니아 버튼 -->
+		<a href="find_player.html" th:href="@{'/find_player'+${countryDto.id}}" style="display: inline-block; width: 214px; height: 128px; overflow: hidden; background-color: #dddddd;" >
+        <img th:src="${countryDto.getImg()}" alt="제품 사진" style="width: 100%; height: 100%; object-fit: cover;" />
+		</a>
+		
+		
+		<a href="find_player.html" th:href="@{'/find_player'+${countryDto.id}}" th:text="${countryDto.name}">{name}</a>
+	</div>
+	<br>
+	<br>
+	<br>
+
+</body>
+
+</html>

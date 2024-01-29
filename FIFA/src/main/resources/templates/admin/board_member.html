@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{common/layouts/defaultLayout}" layout:fragment="Content">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Admin Dashboard</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-wgfs3XSq4HPMSLgUbQECNExGDxWyoJ3SiZO2yFi6FZgQ2L4aU/8Wy7TIvM9PjD5B" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+		integrity="sha512-BPXqLrHNYBUXQHto5UInZM6oG6DbpL2KdheRwuCjYQZe91q9NTZgALxOc8n4PO7X6HsBdQi0vcRJGzxyJuYQKg=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<style>
+		/* Custom styles for sidebar */
+		#sidebar {
+			position: fixed;
+			width: 250px;
+			height: 100%;
+			background: #343a40;
+			color: white;
+			padding-top: 20px;
+		}
+
+		#sidebar .sidebar-header {
+			text-align: center;
+		}
+
+		#sidebar ul.components {
+			padding: 20px 0;
+		}
+
+		#sidebar ul li a {
+			padding: 10px;
+			font-size: 1.2em;
+			text-decoration: none;
+			color: white;
+			display: block;
+		}
+
+		#sidebar ul li a i.fas.fa-exchange-alt {
+			font-size: 0.8em;
+		}
+
+		#sidebar ul li a:hover {
+			background: #575757;
+		}
+
+		#content {
+			margin-left: 250px;
+			padding: 20px;
+		}
+	</style>
+</head>
+
+<body>
+	<!-- Sidebar -->
+	<nav id="sidebar">
+		<div class="sidebar-header">
+			<h3>관리자 메뉴</h3>
+		</div>
+
+		<ul class="list-unstyled components">
+			<li>
+				<a href="#playerSubMenu" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+					<i class="fas fa-user"></i> 선수관리
+				</a>
+				<ul class="collapse list-unstyled" id="playerSubMenu">
+					<li>
+						<a href="create_player"><i class="fas fa-exchange-alt"> 선수생성</i></a>
+					</li>
+					<!-- 다른 선수 메뉴 추가 -->
+				</ul>
+			</li>
+			<li>
+				<a href="#clubSubMenu" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+					<i class="fas fa-building"></i> 클럽관리
+				</a>
+				<ul class="collapse list-unstyled" id="clubSubMenu">
+					<li>
+						<a href="create_club"><i class="fas fa-exchange-alt"> 클럽생성</i></a>
+					</li>
+					<!-- 다른 클럽 메뉴 추가 -->
+				</ul>
+			</li>
+			<li>
+				<a href="#transferMenu" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+					<i class="fas fa-exchange-alt"></i> 이적관리
+				</a>
+				<ul class="collapse list-unstyled" id="transferMenu">
+					<li>
+						<a href="create_transfer"><i class="fas fa-exchange-alt"> 이적생성</i></a>
+					</li>
+					<!-- 다른 클럽 메뉴 추가 -->
+				</ul>
+			</li>
+			
+			<li>
+				<a href="#boardAdmin" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+					<i class="fas fa-clipboard"></i> 게시판관리</a>
+				<ul class="collapse list-unstyled" id="boardAdmin">
+					<li>
+						<a href="board_member"><i class="fas fa-exchange-alt"> 회원별 게시글보기</i></a>
+					</li>
+					<!-- 다른 클럽 메뉴 추가 -->
+				</ul>
+			</li>
+			
+			<li>
+				<a href="#memberAdmin" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+					<i class="fas fa-users"></i> 회원관리</a>
+				<ul class="collapse list-unstyled" id="memberAdmin">
+					<li>
+						<a href="admin_member"><i class="fas fa-exchange-alt"> 회원정보</i></a>
+					</li>
+					<!-- 다른 클럽 메뉴 추가 -->
+				</ul>
+			</li>
+		</ul>
+	</nav>
+
+	<div id="content">
+		<th:block layout:fragment="content">
+			<div class="layout">
+				<table>
+					<thead>
+						<tr>
+							<th class="number-cell">번호</th>
+							<th class="title-cell">제목</th>
+							<th class="content-cell">내용</th>
+							<th class="content-cell">비밀여부</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="board : ${list}" style="margin-bottom: 10px;">
+							<td class="column-spacing number-cell" th:text="${board.id}">1</td>
+							<td class="column-spacing title-cell">
+								<a th:text="${board.title}  " th:href="@{/board_admin_view(id=${board.id})}"></a>
+							</td>
+							<td class="column-spacing content-cell" th:text="${board.content}"></td>
+							<td class="column-spacing title-cell">
+								<span th:if="${board.secret}" class="orange-text">비밀글</span>
+								<span th:if="${!(board.secret)}" class="blue-text">전체 공개글</span>
+							</td>
+
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<br>
+			<br>
+			<div id="paging">
+
+				<th:block th:each="page : ${#numbers.sequence(startPage, endPage)}">
+					<a th:if="${page != nowPage}"
+						th:href="@{/board_member(page = ${page - 1}, searchKeyword = ${param.searchKeyword})}"
+						th:text="${page} "></a>
+					<strong th:if="${page == nowPage}" th:text="${page}" style="color : red"></strong>
+				</th:block>
+				&nbsp;&nbsp;&nbsp;
+				<form th:action="@{/board_member}" method="get">
+					<input type="text" name="searchKeyword">
+					<button type="submit">검색</button>
+
+				</form>
+			</div>
+			<br>
+			<br>
+			<br>
+			<br>
+		</th:block>
+	</div>
+
+	<th:block layout:fragment="script">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<!-- Bootstrap JS and dependencies -->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-AZgb1eZXHhwKM7QvMKjpT1weaBZUqJ+yz1/fO5r5BtwFwPh/2yEWEq75UBLOFbEm"
+			crossorigin="anonymous"></script>
+
+	</th:block>
+
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{common/layouts/defaultLayout}" layout:fragment="Content">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+
+
+</head>
+
+<script th:inline="javascript">
+//  Thymeleaf에서 JavaScript 코드 안에 표현식을 사용할 때는    /*<![CDATA[*/   와    /*]]>*/    로 둘러싸는 것이 관례적으로 사용되고 있습니다. 
+//			이는 JavaScript 엔진이 특정 문자열을 해석하지 않도록 하기 위한 방법입니다 
+//  /*<![CDATA[*/ 와 /*]]>*/:  해당 영역의 내용을 일반 문자열로 취급하라고 알려주는 역할
+// 주석 처리된 부분은 JavaScript에서는 주석으로 간주되고, Thymeleaf에서는 표현식으로 해석되기 때문에 이러한 방식을 통해 충돌을 방지
+
+ 
+    /*<![CDATA[*/
+		
+    var message = /*[[${message}]]*/ null;
+    alert(message);
+
+    location.replace(/*[[${SearchUrl}]]*/);
+
+    /*]]>*/
+</script>
+
+<body>
+
+	<th:block layout:fragment="script">
+		
+	</th:block>
+
+</body>
+
+</html>

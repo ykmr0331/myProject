@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{common/layouts/defaultLayout}" layout:fragment="Content">
+
+<head>
+	<meta charset="UTF-8">
+	<title>게시물 리스트 페이지</title>
+</head>
+
+<style>
+	.orange-text {
+		color: orange;
+		font-style: italic;
+		/* Adding italic style */
+		/* You can add additional styles as needed */
+	}
+
+	.blue-text {
+		color: blue;
+		font-style: italic;
+		/* Adding italic style */
+		/* You can add additional styles as needed */
+	}
+
+	.layout {
+		width: 700px;
+		margin: 0 auto;
+		margin-top: 40px;
+	}
+
+	#paging {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	#paging a {
+		margin: 0 5px;
+		/* Adjust the margin as needed for spacing */
+	}
+
+	table {
+		margin: 0 auto;
+		border-collapse: collapse;
+		width: 100%;
+	}
+
+	table,
+	th,
+	td {
+		border: 1px solid #ddd;
+		/* 테두리 선 스타일 및 색상 지정 */
+	}
+
+	th,
+	td {
+		padding: 15px;
+		text-align: left;
+	}
+
+	/* 클래스를 사용하여 간격 조절 */
+	.column-spacing {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+
+	/* 번호 셀을 좁게 조절 */
+	.number-cell {
+		width: 50px;
+	}
+
+	/* 제목과 내용 셀을 더 넓게 조절 */
+	.title-cell,
+	.content-cell {
+		width: 300px;
+	}
+</style>
+
+<body>
+
+	<th:block layout:fragment="content">
+
+		<div class="layout">
+			<table>
+				<thead>
+					<tr>
+						<th class="number-cell">번호</th>
+						<th class="title-cell">제목</th>
+						<th class="content-cell">내용</th>
+						<th class="content-cell">비밀여부</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="board : ${list}" style="margin-bottom: 10px;">
+						<td class="column-spacing number-cell" th:text="${board.id}">1</td>
+						<td class="column-spacing title-cell">
+							<a th:text="${board.title}  " th:href="@{/board_view(id=${board.id})}"></a>
+						</td>
+						<td class="column-spacing content-cell" th:text="${board.content}"></td>
+						<td class="column-spacing title-cell">
+							<span th:if="${board.secret}" class="orange-text">비밀글</span>
+							<span th:if="${!(board.secret)}" class="blue-text">전체 공개글</span>
+						</td>
+
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<br>
+		<br>
+		<div id="paging">
+
+			<th:block th:each="page : ${#numbers.sequence(startPage, endPage)}">
+				<a th:if="${page != nowPage}"
+					th:href="@{/board_list(page = ${page - 1}, searchKeyword = ${param.searchKeyword})}"
+					th:text="${page} "></a>
+				<strong th:if="${page == nowPage}" th:text="${page}" style="color : red"></strong>
+			</th:block>
+			&nbsp;&nbsp;&nbsp;
+			<form th:action="@{/board_list}" method="get">
+				<input type="text" name="searchKeyword">
+				<button type="submit">검색</button>
+
+			</form>
+		</div>
+		<br>
+		<br>
+		<br>
+		<br>
+	</th:block>
+
+
+
+	<th:block layout:fragment="script">
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+	</th:block>
+
+</body>
+
+</html>

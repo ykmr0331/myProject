@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{common/layouts/defaultLayout}" layout:fragment="Content">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+</head>
+<style>
+	#sidebar {
+		position: fixed;
+		width: 250px;
+		height: 100%;
+		background: #343a40;
+		color: white;
+		padding-top: 20px;
+	}
+
+	#sidebar .sidebar-header {
+		text-align: center;
+	}
+
+	#sidebar ul.components {
+		padding: 20px 0;
+	}
+
+	#sidebar ul li a {
+		padding: 10px;
+		font-size: 1.2em;
+		text-decoration: none;
+		color: white;
+		display: block;
+	}
+
+	#sidebar ul li a i.fas.fa-exchange-alt {
+		font-size: 0.8em;
+	}
+
+	#sidebar ul li a:hover {
+		background: #575757;
+	}
+
+	#content {
+		margin-left: 250px;
+		padding: 20px;
+	}
+</style>
+
+
+<body>
+
+		<!-- Sidebar -->
+	<nav id="sidebar">
+		<div class="sidebar-header">
+			<h3>관리자 메뉴</h3>
+		</div>
+
+		<ul class="list-unstyled components">
+			<li>
+				<a href="#playerSubMenu" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+					<i class="fas fa-user"></i> 선수관리
+				</a>
+				<ul class="collapse list-unstyled" id="playerSubMenu">
+					<li>
+						<a href="create_player"><i class="fas fa-exchange-alt"> 선수생성</i></a>
+					</li>
+					<!-- 다른 선수 메뉴 추가 -->
+				</ul>
+			</li>
+			<li>
+				<a href="#clubSubMenu" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+					<i class="fas fa-building"></i> 클럽관리
+				</a>
+				<ul class="collapse list-unstyled" id="clubSubMenu">
+					<li>
+						<a href="create_club"><i class="fas fa-exchange-alt"> 클럽생성</i></a>
+					</li>
+					<!-- 다른 클럽 메뉴 추가 -->
+				</ul>
+			</li>
+			<li>
+				<a href="#transferMenu" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+					<i class="fas fa-exchange-alt"></i> 이적관리
+				</a>
+				<ul class="collapse list-unstyled" id="transferMenu">
+					<li>
+						<a href="create_transfer"><i class="fas fa-exchange-alt"> 이적생성</i></a>
+					</li>
+					<!-- 다른 클럽 메뉴 추가 -->
+				</ul>
+			</li>
+			
+			<li>
+				<a href="#boardAdmin" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+					<i class="fas fa-clipboard"></i> 게시판관리</a>
+				<ul class="collapse list-unstyled" id="boardAdmin">
+					<li>
+						<a href="board_member"><i class="fas fa-exchange-alt"> 회원별 게시글보기</i></a>
+					</li>
+					<!-- 다른 클럽 메뉴 추가 -->
+				</ul>
+			</li>
+			
+			<li>
+				<a href="#memberAdmin" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+					<i class="fas fa-users"></i> 회원관리</a>
+				<ul class="collapse list-unstyled" id="memberAdmin">
+					<li>
+						<a href="admin_member"><i class="fas fa-exchange-alt"> 회원정보</i></a>
+					</li>
+					<!-- 다른 클럽 메뉴 추가 -->
+				</ul>
+			</li>
+		</ul>
+	</nav>
+
+	<div id="content">
+
+		<th:block layout:fragment="content">
+			<!-- Page Content-->
+			<div class="container padding-bottom-3x mb-2"
+				style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+				<div class="col-md-6">
+					<div class="padding-top-3x hidden-md-up"></div>
+					<h3 class="margin-bottom-1x">이적 생성 페이지</h3>
+
+
+					<form class="row" name="f" id="form-account-regist" method="post">
+
+
+
+						<br>
+
+						<input type="text" id="transferFee" name="transferFee" style="display: none" value="">
+						<div class="col-sm-6">
+							<div class="form-group">
+								<label for="reg-transferFee">이적자금</label>
+								<input class="form-control" name="transferFee" type="transferFee" id="reg-transferFee"
+									required>
+							</div>
+						</div>
+
+
+
+
+
+						<form class="row" name="f" id="form-account-regist" method="post">
+
+							<!-- 국가 선택 드롭다운 메뉴 -->
+							<div class="col-sm-6">
+								<div class="form-group">
+									<label for="reg-player"> 선수 선택</label>
+									<select class="form-select" id="reg-player" name="player">
+										<option value="">선수를 선택하세요</option>
+										<!-- Thymeleaf를 이용하여 컨트롤러에서 가져온 국가 데이터를 추가 -->
+										<th:block th:each="PlayerFindDto : ${playerFindDtoList}">
+											<option th:value="${PlayerFindDto.id}" th:text="${PlayerFindDto.name}">
+											</option>
+										</th:block>
+									</select>
+								</div>
+							</div>
+
+
+
+							<!-- 이전 클럽  선택 드롭다운 메뉴 -->
+							<div class="col-sm-6">
+								<div class="form-group">
+									<label for="reg-previousClub">이전 클럽 선택</label>
+									<select class="form-select" id="reg-previousClub" name="previousClub">
+										<option value="">이전 클럽을 선택하세요</option>
+										<!-- Thymeleaf를 이용하여 컨트롤러에서 가져온 국가 데이터를 추가 -->
+										<th:block th:each="ClubShowDto : ${clubShowDtoList}">
+											<option th:value="${ClubShowDto.id}" th:text="${ClubShowDto.name}"></option>
+										</th:block>
+									</select>
+								</div>
+							</div>
+
+
+
+
+							<!-- 새로운클럽  선택 드롭다운 메뉴 -->
+							<div class="col-sm-6">
+								<div class="form-group">
+									<label for="reg-newClub">새 클럽 선택</label>
+									<select class="form-select" id="reg-newClub" name="newClub">
+										<option value="">새 클럽을 선택하세요</option>
+										<!-- Thymeleaf를 이용하여 컨트롤러에서 가져온 국가 데이터를 추가 -->
+										<th:block th:each="ClubShowDto : ${clubShowDtoList}">
+											<option th:value="${ClubShowDto.id}" th:text="${ClubShowDto.name}"></option>
+										</th:block>
+									</select>
+								</div>
+							</div>
+
+
+
+
+
+						</form>
+						<br>
+						<div class="col-12 text-center text-sm-right">
+							<button class="btn-account-register btn btn-primary margin-bottom-none" id="join-action-btn"
+								type="submit">이적생성</button>
+							<button class="btn-account-reset btn btn-primary margin-bottom-none"
+								type="reset">초기화</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</th:block>
+	</div>
+
+
+
+
+
+
+
+
+
+
+	<th:block layout:fragment="script">
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+		<script type="text/javascript">
+
+
+			let create_transfer_action = function (data) {
+
+				console.log('data는 ' + data.previousClubId)
+				console.log('data는 ' + data.transferFee)
+				console.log('data는 ' + data.newClubId)
+				console.log('data는 ' + data.playerId)
+				$.ajax({
+					url: '/transfer/create_transfer_action',
+					method: 'POST',
+					data: JSON.stringify(data),
+					dataType: 'json',
+					contentType: 'application/json;charset=UTF-8',
+
+					success: function (resultJson) {
+						if (resultJson.result == 1) {
+							console.log('previousClub과 player의 club이 일치하지 않습니다.');
+							$('#reg-previousClub').css('border', '0.5px solid orange')
+							$('#reg-previousClub').tooltip({'trigger': 'hover', 'title': resultJson.msg});
+							console.log('@@@@@@@@@@@resultJson.msg는 ' + resultJson.msg)
+							$('#reg-previousClub').tooltip('show');
+							setTimeout(function () {
+								$('#reg-previousClub').tooltip('dispose');
+							}, 2000);
+
+						} else if (resultJson.result == 2) {
+							console.log('previousClub과 newClub이 같습니다.');
+							$('#reg-previousClub').css('border', '0.5px solid orange')
+							$('#reg-previousClub').tooltip({'trigger': 'hover', 'title': resultJson.msg});
+							console.log('@@@@@@@@@@@resultJson.msg는 ' + resultJson.msg)
+							$('#reg-previousClub').tooltip('show');
+							setTimeout(function () {
+								$('#reg-previousClub').tooltip('dispose');
+							}, 2000);
+
+						} else if (resultJson.result == 3) {
+							console.log('Member의 UserName은 null입니다.');
+							$('#reg-previousClub').css('border', '0.5px solid orange')
+							$('#reg-previousClub').tooltip({'trigger': 'hover', 'title': resultJson.msg});
+							console.log('@@@@@@@@@@@resultJson.msg는 ' + resultJson.msg)
+							$('#reg-previousClub').tooltip('show');
+							setTimeout(function () {
+								$('#reg-previousClub').tooltip('dispose');
+							}, 2000);
+
+						} else {
+							location.href = "/create_transfer_complete";
+							console.log('@@@@@@@@@@@@성공함');
+							console.log('resultJson.result는 ' + resultJson.result)
+						}
+					},
+
+					error: function () {
+						alert("회원가입 실패 다시 시도해 주십시요.");
+					}
+				})
+			};
+
+
+
+
+
+
+			document.addEventListener('DOMContentLoaded', function () {
+				// '회원가입' 버튼 클릭 시 이벤트 핸들러
+				document.getElementById('join-action-btn').addEventListener('click', function (event) {
+					event.preventDefault(); // 기본 동작 방지 (폼 전송 방지)
+
+					// 데이터를 이곳에서 수집하거나 생성
+					let formData = {
+						previousClubId: document.getElementById('reg-previousClub').value,
+						transferFee: document.getElementById('reg-transferFee').value,
+						newClubId: document.getElementById('reg-newClub').value,
+						playerId: document.getElementById('reg-player').value
+
+						// 비밀번호 등 다른 필드도 이곳에 추가할 수 있습니다
+					};
+
+					// member_join_action_rest 함수 호출
+					create_transfer_action(formData);
+				});
+			});
+
+
+
+
+
+		</script>
+	</th:block>
+
+
+</body>
+
+</html>

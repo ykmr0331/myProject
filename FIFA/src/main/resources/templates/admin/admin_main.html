@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{common/layouts/defaultLayout}" layout:fragment="Content">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Admin Dashboard</title>
+
+
+
+
+	<style>
+		/* Custom styles for sidebar */
+		#sidebar {
+			position: fixed;
+			width: 250px;
+			height: 100%;
+			background: #343a40;
+			color: white;
+			padding-top: 20px;
+		}
+
+		#sidebar .sidebar-header {
+			text-align: center;
+		}
+
+		#sidebar ul.components {
+			padding: 20px 0;
+		}
+
+		#sidebar ul li a {
+			padding: 10px;
+			font-size: 1.2em;
+			text-decoration: none;
+			color: white;
+			display: block;
+		}
+
+		#sidebar ul li a i.fas.fa-exchange-alt {
+			font-size: 0.8em;
+		}
+
+		#sidebar ul li a:hover {
+			background: #575757;
+		}
+
+		#content {
+			margin-left: 250px;
+			padding: 20px;
+			background-color: #1c1c1c;
+			/* 배경 색상을 여러분이 원하는 회색과 검정색 사이의 색상으로 변경하세요 */
+			color: white;
+			/* 텍스트 색상을 원하는 색상으로 변경하세요 */
+
+		}
+
+
+		/* Custom styles for the table */
+		.table-responsive {
+			max-width: 50%;
+			max-height: 50%;
+			overflow-x: auto;
+			background-color: white;
+			/* 배경 색상을 하얀색으로 설정합니다. */
+			margin-left: auto;
+			/* 좌측 여백을 자동으로 채우기 위해 사용 */
+			margin-right: 400px;
+			/* 우측 여백을 조절하여 이동시킴 */
+		}
+
+		table {
+			max-width: 100%;
+			margin-bottom: 0;
+		}
+
+
+
+		.table th,
+		.table td {
+			white-space: nowrap;
+			max-width: 150px;
+			text-overflow: ellipsis;
+			overflow: hidden;
+		}
+
+		.player-image {
+			max-width: 100px;
+			/* Adjust the max-width for player images */
+			max-height: 60px;
+			/* Adjust the max-height for player images */
+		}
+	</style>
+</head>
+
+<body>
+	<!-- Sidebar -->
+	<nav id="sidebar">
+		<div class="sidebar-header">
+			<h3>관리자 메뉴</h3>
+		</div>
+
+		<ul class="list-unstyled components">
+			<li>
+				<a href="#playerSubMenu" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+					<i class="fas fa-user"></i> 선수관리
+				</a>
+				<ul class="collapse list-unstyled" id="playerSubMenu">
+					<li>
+						<a href="create_player"><i class="fas fa-exchange-alt"> 선수생성</i></a>
+					</li>
+					<!-- 다른 선수 메뉴 추가 -->
+				</ul>
+			</li>
+			<li>
+				<a href="#clubSubMenu" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+					<i class="fas fa-building"></i> 클럽관리
+				</a>
+				<ul class="collapse list-unstyled" id="clubSubMenu">
+					<li>
+						<a href="create_club"><i class="fas fa-exchange-alt"> 클럽생성</i></a>
+					</li>
+					<!-- 다른 클럽 메뉴 추가 -->
+				</ul>
+			</li>
+			<li>
+				<a href="#transferMenu" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+					<i class="fas fa-exchange-alt"></i> 이적관리
+				</a>
+				<ul class="collapse list-unstyled" id="transferMenu">
+					<li>
+						<a href="create_transfer"><i class="fas fa-exchange-alt"> 이적생성</i></a>
+					</li>
+					<!-- 다른 클럽 메뉴 추가 -->
+				</ul>
+			</li>
+
+			<li>
+				<a href="#boardAdmin" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+					<i class="fas fa-clipboard"></i> 게시판관리</a>
+				<ul class="collapse list-unstyled" id="boardAdmin">
+					<li>
+						<a href="/board_member"><i class="fas fa-exchange-alt"> 회원별 게시글보기</i></a>
+					</li>
+					<!-- 다른 클럽 메뉴 추가 -->
+				</ul>
+			</li>
+
+			<li>
+				<a href="#memberAdmin" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+					<i class="fas fa-users"></i> 회원관리</a>
+				<ul class="collapse list-unstyled" id="memberAdmin">
+					<li>
+						<a href="admin_member"><i class="fas fa-exchange-alt"> 회원정보</i></a>
+					</li>
+					<!-- 다른 클럽 메뉴 추가 -->
+				</ul>
+			</li>
+		</ul>
+	</nav>
+
+	<div id="content">
+		<th:block layout:fragment="content">
+
+
+
+
+
+
+			<div class="table-responsive">
+				<h2 style="color: #007bff; text-align: center;">Player MarketValue Top 3</h2>
+				<table class="table table-hover margin-bottom-none table-bordered" style="border: 4px solid rgb(64, 0, 128);">
+
+					<thead>
+						<tr>
+							<th>Player img</th>
+							<th>Name</th>
+							<th>Country</th>
+							<th>Club</th>
+							<th>Market Value</th>
+							<th>Position</th>
+						</tr>
+					</thead>
+					<tbody>
+
+						<tr th:each="playerFindDto : ${top3Player}">
+
+							<td><img class="player-image" th:src="${playerFindDto.img}" alt="선수사진"
+									style="max-width: 107px; max-height: 64px;" /></td>
+							<td th:text="${playerFindDto.name}" style="max-width: 150px;">선수이름</td>
+							<td th:text="${playerFindDto.countryName}" style="max-width: 150px;">국적</td>
+							<td th:text="${playerFindDto.clubName}" style="max-width: 150px;">소속클럽</td>
+							<td th:text="|${#numbers.formatInteger(playerFindDto.marketValue, 0, 'COMMA')}원|"
+								style="max-width: 150px;">시장가치</td>
+							<td th:text="${playerFindDto.position}" style="max-width: 150px;">포지션</td>
+
+
+						</tr>
+					</tbody>
+				</table>
+
+
+
+
+
+
+
+
+
+
+
+
+				<h2 style="color: #007bff; text-align: center;">Club Funds Top 3</h2>
+				<table class="table table-hover margin-bottom-none table-bordered" style="border: 4px solid rgb(64, 0, 128);">
+					<thead>
+						<tr>
+							<th>Club logo</th>
+							<th>Club Name</th>
+							<th>Country Name</th>
+							<th>Funds</th>
+						</tr>
+					</thead>
+					<tbody>
+
+						<tr th:each="clubShowDto : ${top3Club}">
+
+							<td><img class="club-image" th:src="${clubShowDto.img}" alt="클럽 로고"
+									style="max-width: 107px; max-height: 64px;" /></td>
+							<td th:text="${clubShowDto.name}" style="max-width: 150px;">클럽 이름</td>
+							<td th:text="${clubShowDto.countryName}" style="max-width: 150px;">소속국가</td>
+							<td th:text="|${#numbers.formatInteger(clubShowDto.funds, 0, 'COMMA')}원|"
+								style="max-width: 150px;">자금</td>
+
+
+						</tr>
+					</tbody>
+				</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				<h2 style="color: #007bff; text-align: center;">TransferFee Top 3</h2>
+				<table class="table table-hover margin-bottom-none table-bordered" style="border: 4px solid rgb(64, 0, 128);">
+					<thead>
+						<tr>
+							<th>Player</th>
+							<th>Origin Club</th>
+							<th>New Club</th>
+							<th>TransferFee</th>
+							<th>createDate</th>
+						</tr>
+					</thead>
+					<tbody>
+
+						<tr th:each="transferMarketFindDto : ${top3TransferMarket}">
+
+							<td th:text="${transferMarketFindDto.playerName}" style="max-width: 150px;">Player</td>
+							<td th:text="${transferMarketFindDto.previousClubName}" style="max-width: 150px;">Origin
+								Club</td>
+							<td th:text="${transferMarketFindDto.newClubName}" style="max-width: 150px;">New Club</td>
+							<td th:text="|${#numbers.formatInteger(transferMarketFindDto.transferFee, 0, 'COMMA')}원|"
+								style="max-width: 150px;">TransferFee</td>
+							<td th:text="${#strings.substring(transferMarketFindDto.createDate, 0, 10)}"
+								style="max-width: 150px;">create Date</td>
+
+
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+
+
+
+
+
+
+
+			<br><br>
+		</th:block>
+	</div>
+
+	<th:block layout:fragment="script">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+	</th:block>
+
+</body>
+
+</html>

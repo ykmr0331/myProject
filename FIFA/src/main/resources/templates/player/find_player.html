@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{common/layouts/defaultLayout}" layout:fragment="Content">
+
+<head>
+	<meta charset="UTF-8">
+	<title>선수찾기</title>
+
+	<!-- Montserrat 폰트 링크 추가 -->
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+	
+	<!-- Open Sans 폰트 링크 추가 -->
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+	<style>
+		.table tbody tr td {
+			background-color: #f5f5f5;
+			/* 옅은 회색으로 설정하세요 */
+		}
+
+		.table th {
+			background-color: #555;
+			color: #fff;
+		}
+		
+				
+		body {
+			font-family: 'Montserrat', sans-serif; /* Montserrat 폰트 적용 */
+		}
+		
+
+		.table tbody tr td:not(:first-child) {
+			vertical-align: middle; /* 세로 가운데 정렬 */
+			font-weight: bold; /* 텍스트를 더 진하게 표시합니다 */
+			font-family: 'Open Sans', sans-serif; /* Open Sans 폰트 적용 */
+			font-size: 1.3em; /* 텍스트 크기를 약간 키웁니다 */
+		}
+	</style>
+</head>
+
+<body>
+	<div class="col-lg-8">
+		<div class="padding-top-2x mt-2 hidden-lg-up">
+		<div class="table-responsive">
+			<table class="table table-hover margin-bottom-none">
+				<thead>
+					<tr>
+						<th>Player img</th>
+						<th>Name</th>
+						<th>Country</th>
+						<th>Club</th>
+						<th>Market Value</th>
+						<th>Position</th>
+					</tr>
+			</thead>
+				<tbody>
+					
+					<tr th:each="playerFindDto : ${playerFindDtoList}" th:each-sort="${playerFindDto.id}">
+
+						<td><img class = "player-image" th:src="${playerFindDto.img}" alt="선수사진" style="max-width: 214px; max-height: 128px;" /></td>
+						<td th:text="${playerFindDto.name}" style="max-width: 150px;">선수이름</td>
+						<td th:text="${playerFindDto.countryName}" style="max-width: 150px;">국적</td>
+						<td th:text="${playerFindDto.clubName}" style="max-width: 150px;">소속클럽</td>
+						<td th:text="|${#numbers.formatInteger(playerFindDto.marketValue, 0, 'COMMA')}원|" style="max-width: 150px;">시장가치</td>
+						<td th:text="${playerFindDto.position}" style="max-width: 150px;">포지션</td>
+
+
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<hr>
+	</div>
+	<br><br>
+
+</body>
+
+</html>

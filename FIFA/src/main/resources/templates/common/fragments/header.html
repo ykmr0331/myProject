@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<!-- Thymeleaf 선언 / headerFragment 임을 선언-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:fragment="HeaderFragment">
+<div> <!--style="border: solid 1px yellow"
+        <h1>Header 영역입니다.</h1>-->
+
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<div class="container px-5">
+			<a class="navbar-brand" href="/">Main</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+				data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+
+
+
+
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+					<li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+
+
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" id="navbarDropdownPortfolio" href="#" role="button"
+							data-bs-toggle="dropdown" aria-expanded="false">Player</a>
+						<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownPortfolio">
+							<li><a class="dropdown-item" href="find_continent_player">Player List</a></li>
+						</ul>
+					</li>
+
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" id="navbarDropdownPortfolio" href="#" role="button"
+							data-bs-toggle="dropdown" aria-expanded="false">Club</a>
+						<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownPortfolio">
+							<li><a class="dropdown-item" href="find_continent_club">Club List</a></li>
+						</ul>
+					</li>
+
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" id="navbarDropdownPortfolio" href="#" role="button"
+							data-bs-toggle="dropdown" aria-expanded="false">TransferMarket</a>
+						<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownPortfolio">
+							<li><a class="dropdown-item" href="/transfer_list">Transfer List</a></li>
+						</ul>
+					</li>
+
+
+
+					<li th:if="${session.sUserId != null}" class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" id="navbarDropdownPortfolio" href="#" role="button"
+							data-bs-toggle="dropdown" aria-expanded="false">FAQ</a>
+						<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownPortfolio">
+							<li><a class="dropdown-item" href="/board_write">Create Board</a></li>
+							<li><a class="dropdown-item" href="/board_list">Board List</a></li>
+						</ul>
+					</li>
+
+					<li th:if="${session.sUserId == null}" class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" id="navbarDropdownPortfolio" href="#" role="button"
+							data-bs-toggle="dropdown" aria-expanded="false">FAQ</a>
+						<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownPortfolio">
+							<li><a class="dropdown-item" href="/board_list">Board List</a></li>
+						</ul>
+					</li>
+
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" id="navbarDropdownPortfolio" href="#" role="button"
+							data-bs-toggle="dropdown" aria-expanded="false">Member</a>
+						<ul th:if="${session.sUserId == null}" class="dropdown-menu dropdown-menu-end"
+							aria-labelledby="navbarDropdownPortfolio">
+							<li><a class="dropdown-item" href="/member_login_form">LogIn</a></li>
+							<li><a class="dropdown-item" href="/member_join_form">Join</a></li>
+						</ul>
+
+						<ul th:if="${session.sUserId != null}" class="dropdown-menu dropdown-menu-end"
+							aria-labelledby="navbarDropdownPortfolio">
+							<li><a class="dropdown-item" href="/member_logout_action">LogOut</a></li>
+							<li><a class="dropdown-item" href="/member_remove_form">Remove</a></li>
+						</ul>
+
+
+					</li>
+
+					<div th:if="${session.role != null and session.role.equals('Admin')}">
+						<!-- 내용 -->
+						<a href="/admin">
+							<img src="/images/admin.png" alt="image" />
+						</a>
+					</div>
+
+
+				</ul>
+			</div>
+
+
+
+		</div>
+	</nav>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+		<meta name="description" content="" />
+		<meta name="author" content="" />
+		<title>Modern Business - Start Bootstrap Template</title>
+		<!-- Favicon-->
+		<link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+		<!-- Bootstrap icons-->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+		<!-- Core theme CSS (includes Bootstrap)-->
+		<link href="css/styles.css" rel="stylesheet" />
+	</head>
+</div>
+
+
+
+</html>
