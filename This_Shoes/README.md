@@ -31,7 +31,7 @@
 
 ﻿- Java 
 
-JavaScript
+-JavaScript
 
 - Oracle SQL
 
