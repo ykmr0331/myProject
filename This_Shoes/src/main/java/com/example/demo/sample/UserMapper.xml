@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.sample.UserMapper">
+
+	<resultMap id="userResultMap"
+		type="com.example.demo.sample.User" autoMapping="true">
+		<id column="u_id" property="u_id" />
+		<id column="u_pass" property="u_pass" />
+		<id column="u_name" property="u_name" />
+		<id column="u_email" property="u_email" />
+		<id column="u_age" property="u_age" />
+		<id column="u_phone" property="u_phone" />
+		<id column="u_address" property="u_address" />
+	</resultMap>
+
+	   <insert id="insert" parameterType="com.example.demo.sample.User">
+        insert into userinfo(u_id, u_pass, u_name, u_email, u_age, u_phone, u_address)
+        values(#{u_id},#{u_pass},#{u_name},#{u_email},#{u_age},#{u_phone},#{u_address})
+    </insert>
+	
+	
+
+
+
+	<update id="update" parameterType="com.example.demo.sample.User">
+		update userinfo set
+		 u_pass=#{u_pass}, u_name=#{u_name}, u_email=#{u_email},
+		u_age=#{u_age}, u_phone=#{u_phone}, u_address=#{u_address}
+		where
+		u_id=#{u_id}
+	</update>
+
+
+
+
+	<delete id="delete" parameterType="java.lang.String">
+		delete from USERINFO where
+		u_id=#{u_id}
+	</delete>
+
+
+	<select id="findUser" resultType="com.example.demo.sample.User"
+		parameterType="java.lang.String">
+		select * from USERINFO where u_id=#{u_id}
+	</select>
+
+
+	<select id="findUserList"
+		resultType="com.example.demo.sample.User">
+		select * from USERINFO
+	</select>
+
+
+	<select id="countByUserId" resultType="int"
+		parameterType="java.lang.String">
+		select count(*) as cnt from USERINFO where
+		u_id=#{u_id}
+	</select>
+
+	<!-- 추가: userinfo 테이블에서 u_id를 조회하는 쿼리 -->
+	<select id="findUserIdByNamePhone" parameterType="java.util.Map"
+		resultType="java.lang.String">
+		select u_id from USERINFO where u_name=#{u_name} and
+		u_phone=#{u_phone}
+	</select>
+
+	<!-- 추가: userinfo 테이블에서 u_pass를 조회하는 쿼리 -->
+	<select id="findUserPassByNamePhone"
+		parameterType="com.example.demo.sample.User"
+		resultType="java.lang.String">
+		select u_pass from USERINFO where u_id=#{u_id} and
+		u_phone=#{u_phone}
+	</select>
+
+</mapper>
