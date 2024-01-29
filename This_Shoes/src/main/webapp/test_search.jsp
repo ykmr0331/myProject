@@ -1,8 +1,10 @@
 <%@page import="java.util.HashSet"%>
 <%@page import="java.util.Set"%>
-<%@page import="product.domain.Product"%>
+
+<%@page import="com.example.demo.sample.product.domain.Product"%>
+<%@page import="com.example.demo.sample.product.service.ProductService"%>
 <%@page import="java.util.List"%>
-<%@page import="product.service.ProductService"%>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
