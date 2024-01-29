@@ -30,9 +30,7 @@
 ## 기술
 
 ﻿- Java 
-
- 
-- JavaScript
+-JavaScript
 
 
 - Oracle SQL
