@@ -13,8 +13,8 @@ public class MailConfig {
     public JavaMailSender javaMailService() {
         JavaMailSenderImpl javaMailSender = new JavaMailSenderImpl();
         javaMailSender.setHost("smtp.naver.com");
-        javaMailSender.setUsername("ykmr0331"); // 여기에 네이버 아이디입력
-        javaMailSender.setPassword("jaekkie3cpj!"); // 여기에 Gmail 비밀번호 입력
+        javaMailSender.setUsername(""); // 여기에 네이버 아이디입력
+        javaMailSender.setPassword(""); // 여기에 Gmail 비밀번호 입력
         javaMailSender.setPort(465);
         javaMailSender.setJavaMailProperties(getMailProperties());
         return javaMailSender;
