@@ -1,9 +1,9 @@
 <%@page import="java.util.HashSet"%>
 <%@page import="java.util.Set"%>
 <%@page import="java.util.List"%>
-<%@page import="product.domain.Product"%>
-<%@page import="product.service.ProductService"%>
-<%@page import="product.service.ProductServiceImpl"%>
+<%@page import="com.example.demo.sample.product.domain.Product"%>
+<%@page import="com.example.demo.sample.product.service.ProductService"%>
+<%@page import="com.example.demo.sample.product.service.ProductServiceImpl"%>
 
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
