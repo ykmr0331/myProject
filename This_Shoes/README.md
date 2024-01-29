@@ -33,12 +33,9 @@
 
 -JavaScript
 
-
 - Oracle SQL
 
-
 - MyBatis
-
 
 - JSP
 
