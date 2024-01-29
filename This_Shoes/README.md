@@ -31,13 +31,13 @@
 
 ﻿- Java 
 
--JavaScript
+- JavaScript
 
--Oracle SQL
+- Oracle SQL
 
--MyBatis
+- MyBatis
 
--JSP
+- JSP
 
 ## 프로젝트 소개
 
