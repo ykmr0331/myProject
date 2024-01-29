@@ -30,9 +30,17 @@
 ## 기술
 
 ﻿- Java 
+
+ 
 - JavaScript
+
+
 - Oracle SQL
+
+
 - MyBatis
+
+
 - JSP
 
 
