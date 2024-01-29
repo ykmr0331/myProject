@@ -33,11 +33,11 @@
 
 -JavaScript
 
-- Oracle SQL
+-Oracle SQL
 
-- MyBatis
+-MyBatis
 
-- JSP
+-JSP
 
 
 
