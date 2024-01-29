@@ -17,7 +17,7 @@
  
 - ﻿Back-End : Java, Spring Boot, JPA
  
-- ﻿Front-End : JavaScript, jQuery
+- ﻿Front-End : JavaScript, jQuery, Fetch API
 
 - ﻿View Template : Thymeleaf , Bootstrap
 
@@ -34,7 +34,7 @@
 
 - 관리자 권한으로 선수, 클럽, 이적 생성 가능
   
-- 상품에서 직접 주문하기와 상품을 카트에 담은 후 주문하기 기능 둘다 구현
+- 메인 페이지에 동적으로 표시된 영상 실시간 재생 가능 
 
 
 
