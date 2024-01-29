@@ -1,1 +1,1 @@
-제목: This_Shoes    로고나 이미지
+# 프로젝트 제목:This_Shoes
