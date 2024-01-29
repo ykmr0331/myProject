@@ -1,4 +1,4 @@
-#  This_Shoes
+#  FIFA Portal
 
 <p align="center">
   <img src="https://github.com/ykmr0331/myProject/assets/117189519/88aa1a69-1450-403f-82cf-6e5f05deb956">
@@ -6,39 +6,27 @@
 
 ## 프로젝트 정보
 
-개발 팀: 아이티윌 자바 교육 143기 2차 프로젝트 2조
+개발 팀: 아이티윌 자바 교육 143기 2차 프로젝트 2조 
 
-개발 인원: 8명 
+개발 목적:  Spring Boot와 JPA를 활용하여 처음부터 혼자서 프로젝트를 전체적으로 이해 후 완성하기 위한 목적
 
-개발 목적:  교육 과정 동안 배운 MyBatis, JSP를 활용하여 Kream 쇼핑몰 사이트 모방
-
-개발 기간: 2023.8.16~202023.8.25
-
-## 팀소개
-
-팀장: 허승범
-
-팀원: 유채린, 박재찬, 최재용, 전아현, 장희주, 고범석, 박근우
+개발 기간: 2023.12.10~2024.1.15
 
 
-## 담당업무
-
-1. 회원(User)관리 담당
-2. 회원가입, 로그인, 회원정보 수정 페이지 담당
-3. 발표 담당
 
 ## 기술
 
  
- - Java 
+- ﻿Back-End : Java, Spring Boot, JPA
+ 
+- ﻿Front-End : JavaScript, jQuery
 
-- JavaScript
+- ﻿View Template : Thymeleaf , Bootstrap
 
-- Oracle SQL
+- ﻿DB: Oracle SQL
 
-- MyBatis
+- ﻿API: Kakao Login
 
-- JSP
 
 ## 프로젝트 소개
 
