@@ -20,14 +20,21 @@
 
 팀원: 유채린, 박재찬, 최재용, 전아현, 장희주, 고범석, 박근우
 
+
+## 담당업무
+
+1. 회원(User)관리 담당
+2. 회원가입, 로그인, 회원정보 수정 페이지 담당
+3. 발표 담당
+
 ## 기술
 
 ﻿- Java 
 - JavaScript
--Oracle SQL
-- Oracle Database 12c
+- Oracle SQL
 - MyBatis
-- JSP![image](https://github.com/ykmr0331/myProject/assets/117189519/7c302d4b-612f-4a41-88de-97ddc5071c7e)
+- JSP
+
 
 
 
