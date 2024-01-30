@@ -13,9 +13,6 @@
 # 개발 기간               
 
 - **2023.10.10 ~ 2023.11.15**
-  
-- <span style="font-size: 5em;"> ggggg </span>
-
 
 # 팀원
 
