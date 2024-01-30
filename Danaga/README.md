@@ -33,10 +33,11 @@
 # 나의 파트
 
 
+### 회원 주문목록 및 주문 상세보기 페이지(Front-End)
+
+
 ![스크린샷 2024-01-30 232615](https://github.com/ykmr0331/myProject/assets/117189519/42c674df-9dac-4ef0-b1d0-3db96fe0ce6a)
 
-
-### 회원 주문목록 및 주문 상세보기 페이지(Front-End)
 
 -   ﻿model과 thymeleaf템플릿 엔진으로  주문 내역 동적 반영
 
