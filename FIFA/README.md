@@ -4,14 +4,17 @@
   <img src="https://github.com/ykmr0331/myProject/assets/117189519/7f62dc91-917d-4527-ab1d-74c8facb7bb4">
 </p>
 
-
+<br><br>
 ## 프로젝트 개요
 
 개발 목적:  Spring Boot와 JPA를 활용하여 전반적인 프로젝트 진행과정을 이해 및 완성하기 위한 목적
 
+
+<br><br>
 ## 개발 기간
 
 - **2023.12.10~2024.1.15**
+
 
 <br><br>
 ## 기술
