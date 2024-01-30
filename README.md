@@ -9,7 +9,7 @@
 
 개발 기간: 2023.10.10~2023.11.15
 
-[프로젝트 README로 가기](https://github.com/ykmr0331/myProject/tree/master/Danaga){:style="color🐈‍⬛;"}
+[프로젝트 README로 가기](https://github.com/ykmr0331/myProject/tree/master/Danaga)
 
 
 ## 2. FIFA 
