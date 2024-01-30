@@ -33,7 +33,7 @@
 # 나의 파트
 
 
-![image](https://github.com/ykmr0331/myProject/assets/117189519/f0d17953-a0b4-46e7-95e8-237298981004)
+![image](https://github.com/ykmr0331/myProject/assets/117189519/19742e7a-22d2-4b4f-bd24-de279de3c77e)
 
 ### 회원 주문목록 및 주문 상세보기 페이지(Front-End)
 
