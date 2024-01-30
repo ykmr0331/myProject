@@ -21,4 +21,7 @@
 ![Web App Reference Architecture](https://github.com/2023-05-JAVA-DEVELOPER-143/2023-05-JAVA-DEVELOPER-final-project-team3-avengers/assets/133833132/f55e300e-40ac-4bd8-b42a-dd8a98c0cf94)
 
 
-### 화이팅입니다~
+# 나의 파트
+
+- 회원 주문목록 및 주문 상세보기 페이지
+![Web App Reference Architecture](https://github.com/ykmr0331/myProject/assets/117189519/763cbb18-8762-4209-90bc-d2128d59631a)
