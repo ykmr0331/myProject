@@ -58,7 +58,7 @@
 -   ﻿﻿﻿주문상태에 따라 취소 및 환불 버튼 Javascript로 동적 조절
 
 
-### 환불 요청 페이지
+### 환불 요청 페이지(Front-End & Back-End)
 
 -   ﻿model과 thymeleaf템플릿 엔진으로 주문 내역 반영
 
