@@ -44,10 +44,9 @@
 
 
 <br>
+ 
 
-## 파트1 
-
-### 회원 주문목록 및 주문 상세보기 페이지(Front-End)
+## 1. 회원 주문목록 및 주문 상세보기 페이지(Front-End)
 
 
 ![스크린샷 2024-01-30 232615](https://github.com/ykmr0331/myProject/assets/117189519/42c674df-9dac-4ef0-b1d0-3db96fe0ce6a)
@@ -63,7 +62,7 @@
 
 ---
 
-## 파트2. ### 비회원 주문찾기 페이지(Front-End)
+## 2. 비회원 주문찾기 페이지(Front-End)
 
 
 ![스크린샷 2024-01-30 233338](https://github.com/ykmr0331/myProject/assets/117189519/c06429e4-1321-42b1-baf6-f64115b1e9e7)
@@ -78,7 +77,7 @@
 <br><br><br>
 ---
 
-## 파트3. ### 비회원 주문내역 페이지(Front-End)
+## 3. 비회원 주문내역 페이지(Front-End)
 
 
 ![스크린샷 2024-01-30 233601](https://github.com/ykmr0331/myProject/assets/117189519/810524bf-1b27-4337-a53a-be9d80ef961e)
@@ -93,7 +92,7 @@
 <br><br><br>
 ---
 
-## 파트4. ### 환불 요청 페이지(Front-End & Back-End)
+## 4. 환불 요청 페이지(Front-End & Back-End)
 
 
 ![스크린샷 2024-01-30 234522](https://github.com/ykmr0331/myProject/assets/117189519/21d6b472-4d49-4f5b-b1c4-7a6936151a07)
