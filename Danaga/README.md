@@ -37,6 +37,8 @@
 <summary>클릭하여 저의 파트 상세내용을 확인하세요.</summary>
 
 
+
+
 ### 회원 주문목록 및 주문 상세보기 페이지(Front-End)
 
 
@@ -48,6 +50,8 @@
 -   ﻿Restful API와 Ajax를 이용 취소버튼 클릭시 주문상태가 변경
 
 -   ﻿모달창으로 주문 상세정보표기
+
+
 
 
 
@@ -66,11 +70,17 @@
 
 ### 비회원 주문내역 페이지(Front-End)
 
+
+![스크린샷 2024-01-30 233601](https://github.com/ykmr0331/myProject/assets/117189519/810524bf-1b27-4337-a53a-be9d80ef961e)
+
+
 -   ﻿model과 thymeleaf템플릿 엔진으로 주문 내역 반영
 
 -   ﻿Restful API와 Ajax를 이용하여 취소버튼 클릭시 주문상태 변경
 
 -   ﻿﻿﻿주문상태에 따라 취소 및 환불 버튼 Javascript로 동적 조절
+
+
 
 
 ### 환불 요청 페이지(Front-End & Back-End)
