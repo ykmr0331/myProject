@@ -82,6 +82,10 @@
 
 ### 환불 요청 페이지(Front-End & Back-End)
 
+
+![스크린샷 2024-01-30 234522](https://github.com/ykmr0331/myProject/assets/117189519/21d6b472-4d49-4f5b-b1c4-7a6936151a07)
+
+
 -   ﻿model과 thymeleaf템플릿 엔진으로 주문 내역 반영
 
 -   ﻿Script를 활용하여 입력값의 유효성을 검사
