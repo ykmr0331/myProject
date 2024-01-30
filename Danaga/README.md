@@ -50,7 +50,7 @@
 -   ﻿Restful API와 Ajax를 이용 취소버튼 클릭시 주문상태가 변경
 
 -   ﻿모달창으로 주문 상세정보표기
-  <br><br><br>  
+  <br><br><br><br> 
 
 ### 비회원 주문찾기 페이지(Front-End)
 
