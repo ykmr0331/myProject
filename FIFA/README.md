@@ -52,6 +52,21 @@
 <details>
 <summary></summary>
 
+## 1. 메인 페이지(Front-End)
+
+
+![스크린샷 2024-01-30 232615](https://github.com/ykmr0331/myProject/assets/117189519/42c674df-9dac-4ef0-b1d0-3db96fe0ce6a)
+
+
+﻿- FIFA Portal의 메인 화면
+
+- Fetch API를 사용하여 동적 비디오 콘텐츠를 비동기적으로 제공
+
+﻿- Thymeleaf를 사용하여 공통구조를 가진 웹 페이지 구현
+       
+<br><br><br>
+
+
 </details>
 
 
