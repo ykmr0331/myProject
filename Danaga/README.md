@@ -2,6 +2,13 @@
 <img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/8D63BFCB55921C27B39DB09FFD775F1C1EDE00FC4D5611AC492CA33B7651FDF2/scale?width=1440&aspectRatio=1.78&format=jpeg" width="800" height="400"/>
 
 
+# 개발 개요               
+
+- 다나와(컴퓨터, 가전제품) 쇼핑사이트 벤치마킹
+- 제품 종류를 옵션 기준 분류
+- 회원, 장바구니, 주문페이지 제작
+
+
 
 # 개발 기간               
 
