@@ -33,6 +33,8 @@
 # 나의 파트
 
 
+![image](https://github.com/ykmr0331/myProject/assets/117189519/f0d17953-a0b4-46e7-95e8-237298981004)
+
 ### 회원 주문목록 및 주문 상세보기 페이지(Front-End)
 
 -   ﻿model과 thymeleaf템플릿 엔진으로  주문 내역 동적 반영
