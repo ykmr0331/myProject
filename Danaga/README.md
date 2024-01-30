@@ -23,5 +23,13 @@
 
 # 나의 파트
 
-- 회원 주문목록 및 주문 상세보기 페이지
-![Web App Reference Architecture](https://github.com/ykmr0331/myProject/assets/117189519/763cbb18-8762-4209-90bc-d2128d59631a)
+
+### 회원 주문목록 및 주문 상세보
+
+-   ﻿model과 thymeleaf템플릿 엔진으로  주문 내역 동적 반영
+
+-   ﻿Restful API와 Ajax를 이용 취소버튼 클릭시 주문상태가 변경
+
+-   ﻿모달창으로 주문 상세정보표기
+
+
