@@ -188,7 +188,7 @@
 <br><br><br>
 
 
-## 8. 관리자  페이지
+## 9. 생성  페이지(관리자 권한)
 
 
 ![관리자 생성관련 페이지](https://github.com/ykmr0331/myProject/assets/117189519/475682b8-cb6c-439e-90de-10e1ca201c78)
@@ -200,7 +200,6 @@
 ﻿- MultipartHttpServletRequest를 이용하여 선수, 클럽 생성지 이미지 파일 첨부
        
 <br><br><br>
-
 
 
 </details>
