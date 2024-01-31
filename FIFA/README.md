@@ -80,7 +80,7 @@
 
 ﻿- Restful API를 기반으로 로그인 처리
 
-﻿- Kakao API를 이용하여 통합 로그인 기능을 구
+﻿- Kakao API를 이용하여 통합 로그인 기능을 구현
        
 <br><br><br>
 
