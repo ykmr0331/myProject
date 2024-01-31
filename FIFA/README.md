@@ -55,7 +55,7 @@
 ## 1. 메인 페이지
 
 
-![스크린샷 2024-01-30 232615](https://github.com/ykmr0331/myProject/assets/117189519/42c674df-9dac-4ef0-b1d0-3db96fe0ce6a)
+![메인페이지](https://github.com/ykmr0331/myProject/assets/117189519/0c459bb6-218f-4d1e-b01d-375517373025)
 
 
 ﻿- FIFA Portal의 메인 화면
