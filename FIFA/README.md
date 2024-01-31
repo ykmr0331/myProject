@@ -152,7 +152,7 @@
 
 ﻿- Model과 Thymeleaf로 동적 HTML 생성
 
-- Spring Data JPA의 Query Method를 활용하여 게시글을 검색
+﻿- Spring Data JPA의 Query Method를 활용하여 게시글을 검색
        
 <br><br><br>
 
