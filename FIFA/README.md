@@ -68,7 +68,7 @@
 <br><br><br>
 
 
-## 1. 로그인 페이지
+## 2. 로그인 페이지
 
 
 ![로그인 페이지 화면](https://github.com/ykmr0331/myProject/assets/117189519/0607f988-c0a2-4df1-a34c-8983c097a2ed)
