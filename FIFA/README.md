@@ -50,7 +50,7 @@
 
 
 <details>
-<summary></summary>
+<summary>▶프로젝트 상세보기</summary>
 
 ## 1. 메인 페이지
 
