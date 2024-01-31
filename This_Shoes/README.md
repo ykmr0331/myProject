@@ -86,7 +86,7 @@
 
 <br><br>
 
-## 3. 로그인 페이
+## 3. 로그인 페이지
 
 ![회원가입 페이지](https://github.com/ykmr0331/myProject/assets/117189519/95ccba91-8462-457b-b791-f3157c0b009d)
 
