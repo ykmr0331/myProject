@@ -50,7 +50,7 @@
 
 
 <details>
-<summary>▶프로젝트 상세보기</summary>
+<summary>프로젝트 상세보기</summary>
 
 ## 1. 메인 페이지
 
@@ -136,6 +136,40 @@
 
 ﻿- Thymeleaf로 날짜 및 숫자를 사용자 친화적 형식으로 표시
 
+       
+<br><br><br>
+
+
+## 6. 게시판 목록 페이지
+
+
+![게시판 목록 페이지](https://github.com/ykmr0331/myProject/assets/117189519/8a7f798d-91cd-40a4-9635-5bcea0c63e2d)
+
+
+﻿- FIFA Portal의 게시판  목록 페이지
+
+﻿- Pageable 인터페이스로 게시판 목록 구현
+
+﻿- Model과 Thymeleaf로 동적 HTML 생성
+
+- Spring Data JPA의 Query Method를 활용하여 게시글을 검색
+       
+<br><br><br>
+
+
+## 7. 게시글 작성 페이지
+
+
+![게시글 작성 페이지](https://github.com/ykmr0331/myProject/assets/117189519/1fdf2b42-b5a5-4364-9269-5d5bbd7cc7b0)
+
+
+﻿- FIFA Portal의 게시글 작성 페이지
+
+﻿- 로그인시 게시판 목록에서 접근 가능
+
+﻿- Dto와 Session을 이용해 게시글의 제목과 내용을 서버로 가져옴
+
+﻿- Annotation을 사용해 비밀글 여부의 기본값을 공개 지정
        
 <br><br><br>
 
