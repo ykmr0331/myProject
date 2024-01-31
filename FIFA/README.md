@@ -188,6 +188,20 @@
 <br><br><br>
 
 
+## 8. 관리자  페이지
+
+
+![관리자 생성관련 페이지](https://github.com/ykmr0331/myProject/assets/117189519/475682b8-cb6c-439e-90de-10e1ca201c78)
+
+﻿- 선수, 클럽, 이적 생성 페이지는 관리자 페이지로만 접근 가능(세션 활용)
+ 
+﻿- Thymeleaf와 Ajax를 활용하여 Restful API로 정보를 전송후 생성 
+
+﻿- MultipartHttpServletRequest를 이용하여 선수, 클럽 생성지 이미지 파일 첨부
+       
+<br><br><br>
+
+
 
 </details>
 
