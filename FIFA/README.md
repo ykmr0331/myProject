@@ -177,16 +177,16 @@
 ## 8. 관리자  페이지
 
 
-![게시글 작성 페이지](https://github.com/ykmr0331/myProject/assets/117189519/1fdf2b42-b5a5-4364-9269-5d5bbd7cc7b0)
+![관리자페이지](https://github.com/ykmr0331/myProject/assets/117189519/2b19d6c3-a5c9-47a3-a88e-6223924d484b)
 
 
-﻿- FIFA Portal의 게시글 작성 페이지
 
-﻿- 로그인시 게시판 목록에서 접근 가능
+﻿- FIFA Portal의 관리자 메인 페이지
 
-﻿- Dto와 Session을 이용해 게시글의 제목과 내용을 서버로 가져옴
+﻿- JPQL을 이용해 선수, 클럽, 이적시장 순위를 메인페이지에 구현
 
-﻿- Annotation을 사용해 비밀글 여부의 기본값을 공개 지정
+﻿- 왼쪽 사이드바에서 관리 메뉴로 이동 가능
+
        
 <br><br><br>
 
