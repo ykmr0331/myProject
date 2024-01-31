@@ -9,7 +9,7 @@
 
 개발 기간: 2023.10.10~2023.11.15
 
-[프로젝트 상세 소개](https://github.com/ykmr0331/myProject/tree/master/Danaga/README.md)
+[프로젝트 상세 소개](https://github.com/ykmr0331/myProject/Danaga)
 
 
 ## 2. FIFA 
@@ -18,7 +18,7 @@
 
 개발 기간: 2023.12.10~2024.1.15
 
-[프로젝트 상세 소개](https://github.com/ykmr0331/myProject/tree/master/FIFA/README.md)
+[프로젝트 상세 소개](https://github.com/ykmr0331/myProject/FIFA)
 
 
 ## 3. This_Shoes
@@ -29,7 +29,7 @@
 
 개발 기간: 2023.8.16~202023.8.25
 
-[프로젝트 상세 소개](https://github.com/ykmr0331/myProject/tree/master/This_Shoes/README.md)
+[프로젝트 상세 소개](https://github.com/ykmr0331/myProject/This_Shoes)
 
 
 
