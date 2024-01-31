@@ -64,9 +64,13 @@
 ![로그인](https://github.com/ykmr0331/myProject/assets/117189519/39b09d47-4bd7-44ea-8fab-735d9fb1e1d0)
 
 
-- This Shoes 프로젝트의 회원정보 수 페이지
+- This Shoes 프로젝트의 로그인 페이지
   
-- Javascript를 활용하여 유효성 감사 및 아이디 중복체크
+- Javascript를 활용하여 유효성 검사
+
+- Java를 이용해 아이디 존재여부체크
+
+- Javascript로 팝업창을 열어 아이디와 비밀번호 찾기 기능을 구현
 
 
 <br><br>
@@ -80,9 +84,11 @@
 
 
 
-- This Shoes 프로젝트의 회원정보 수 페이지
+- This Shoes 프로젝트의 회원가입 페이지
   
-- Javascript를 활용하여 유효성 감사 및 아이디 중복체크
+- Javascript를 활용하여 유효성 검사
+
+- Java를 이용해 아이디 중복 체크 
 
 <br><br>
 
