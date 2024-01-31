@@ -62,7 +62,6 @@
 
 ﻿- Fetch API를 사용하여 동적 비디오 콘텐츠를 비동기적으로 제공
 
-
 ﻿- Thymeleaf를 사용하여 공통구조를 가진 웹 페이지 구현
        
 <br><br><br>
@@ -81,7 +80,7 @@
 
 ﻿- Restful API를 기반으로 로그인 처리
 
-- Kakao API를 이용하여 통합 로그인 기능을 구
+﻿- Kakao API를 이용하여 통합 로그인 기능을 구
        
 <br><br><br>
 
@@ -100,7 +99,7 @@
 
 ﻿- Spring Data JPA Query Method로 선수 검색 구현
 
-- Spring Web 인터페이스를 이용해 관리자 권한으로 선수 이미지 업로
+﻿- Spring Web 인터페이스를 이용해 관리자 권한으로 선수 이미지 업로
        
 <br><br><br>
 
@@ -119,13 +118,13 @@
 
 ﻿- Spring Data JPA Query Method로 선수 검색 구현
 
-- Spring Web 인터페이스를 이용해 관리자 권한으로 클럽 로고 이미지 업로드
+﻿- Spring Web 인터페이스를 이용해 관리자 권한으로 클럽 로고 이미지 업로드
        
 <br><br><br>
 
 
 
-## 5. 이적 목록 페이
+## 5. 이적 목록 페이지
 
 
 ![이적시장 목록 페이지](https://github.com/ykmr0331/myProject/assets/117189519/2c6ed359-db41-4f53-9f94-52f73e0635c3)
