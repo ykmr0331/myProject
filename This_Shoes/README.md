@@ -75,7 +75,9 @@
 ## 2. 회원가입 페이지
 
 
-![회원정보수정페이지](https://github.com/ykmr0331/myProject/assets/117189519/485a06df-12c7-4aa7-896d-f187dacb0da6)
+
+![회원 가입 페이지](https://github.com/ykmr0331/myProject/assets/117189519/916e4dce-75f7-4e7c-8508-3bf38f3ec69c)
+
 
 
 - This Shoes 프로젝트의 회원정보 수 페이지
