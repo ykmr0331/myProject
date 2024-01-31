@@ -103,7 +103,7 @@
 ![회원정보수정페이지](https://github.com/ykmr0331/myProject/assets/117189519/485a06df-12c7-4aa7-896d-f187dacb0da6)
 
 
-- This Shoes 프로젝트의 회원가입 페이지
+- This Shoes 프로젝트의 회원정보 수 페이지
   
 - Javascript를 활용하여 유효성 감사 및 아이디 중복체크
 
