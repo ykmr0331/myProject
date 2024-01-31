@@ -177,32 +177,7 @@
 ## 8. 관리자  페이지
 
 
-![관리자페이지](https://github.com/ykmr0331/myProject/assets/117189519/2b19d6c3-a5c9-47a3-a88e-6223924d484b)
-
-
-
-﻿- FIFA Portal의 관리자 메인 페이지
-
-﻿- JPQL을 이용해 선수, 클럽, 이적시장 순위를 메인페이지에 구현
-
-﻿- 왼쪽 사이드바에서 관리 메뉴로 이동 가능
-
-       
-<br><br><br>
-
-
-
-## 9. 선수, 클럽, 이적시장 생성 페이지
-
-
-![관리자 생성](https://github.com/ykmr0331/myProject/assets/117189519/13d429e6-c02d-4756-bb6a-90d0e93007b9)
-
-
-﻿- MultipartHttpServletRequest를 사용해서 이미지 파일을 업로드
-
-﻿- 각각의 생성페이지는 관리자 페이지에서만 접근 가능(세션으로 접근)
-
-﻿- 
+![관리자페이지](https://github.com/ykmr0331/myProjec성
 
        
 <br><br><br>
