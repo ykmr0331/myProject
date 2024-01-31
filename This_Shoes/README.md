@@ -59,13 +59,31 @@
 
 <br><br>
 
-## 1. 메인 페이지
-인 페이지
+## 1. 로그인 페이지
+
+![로그인](https://github.com/ykmr0331/myProject/assets/117189519/39b09d47-4bd7-44ea-8fab-735d9fb1e1d0)
+
+
+- This Shoes 프로젝트의 회원정보 수 페이지
   
 - Javascript를 활용하여 유효성 감사 및 아이디 중복체크
 
 
 <br><br>
+
+
+## 2. 회원가입 페이지
+
+
+![회원정보수정페이지](https://github.com/ykmr0331/myProject/assets/117189519/485a06df-12c7-4aa7-896d-f187dacb0da6)
+
+
+- This Shoes 프로젝트의 회원정보 수 페이지
+  
+- Javascript를 활용하여 유효성 감사 및 아이디 중복체크
+
+<br><br>
+
 
 ## 3. 회원정보 수정 페이지
 
@@ -76,7 +94,7 @@
   
 - Javascript를 활용하여 유효성 감사 및 아이디 중복체크
 
-
+<br><br>
 
 
 
