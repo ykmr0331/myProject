@@ -177,8 +177,13 @@
 ## 8. 관리자  페이지
 
 
-![관리자페이지](https://github.com/ykmr0331/myProjec성
+![관리자 페이지](https://github.com/ykmr0331/myProject/assets/117189519/cdf4e0a9-f5a7-4aa4-b16a-552cd65a571e)
 
+﻿- FIFA Portal의 관리자 메인 페이지
+ 
+﻿- JPQL을 이용해 선수, 클럽, 이적시장 순위를 메인페이지에 구현
+
+﻿- 왼쪽 사이드바에서 관리 메뉴로 이동 가능
        
 <br><br><br>
 
