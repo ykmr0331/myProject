@@ -57,6 +57,8 @@
 <details>
 <summary>클릭하여 나의 파트 상세내용을 확인하세요.</summary>
 
+<br><br>
+
 ## 1. 메인 페이지
 
 ![메인페이지](https://github.com/ykmr0331/myProject/assets/117189519/a6ed50bf-0bbd-4757-b5a7-9cfa3e031223)
@@ -69,6 +71,8 @@
 - jsp:include를 활용하여 각 페이지에 일관된 헤더와 사이드 메뉴 포함(유지보수성 향상)
 
 
+<br><br>
+
 ## 2. 회원가입 페이지
 
 ![회원가입 페이지](https://github.com/ykmr0331/myProject/assets/117189519/95ccba91-8462-457b-b791-f3157c0b009d)
@@ -79,6 +83,8 @@
 - Javascript를 활용하여 유효성 감사 및 아이디 중복체크
 
 
+
+<br><br>
 
 ## 3. 로그인 페이
 
