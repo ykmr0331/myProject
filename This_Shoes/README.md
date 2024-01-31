@@ -51,6 +51,25 @@
 - 상품에서 직접 주문하기와 상품을 카트에 담은 후 주문하기 기능 둘다 구현
 
 
+<details>
+<summary>프로젝트 상세보기</summary>
+
+## 1. 메인 페이지
+
+![메인페이지](https://github.com/ykmr0331/myProject/assets/117189519/a6ed50bf-0bbd-4757-b5a7-9cfa3e031223)
+
+
+- This Shoes 프로젝트의 메인 페이지
+  
+- 랜덤으로 브랜드별 상품 2개씩 보여줌
+
+- jsp:include를 활용하여 각 페이지에 일관된 헤더와 사이드 메뉴 포함(유지보수성 향상)
+
+
+
+
+</details>
+
 
 
 
