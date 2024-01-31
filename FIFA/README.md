@@ -174,6 +174,23 @@
 <br><br><br>
 
 
+## 8. 관리자  페이지
+
+
+![게시글 작성 페이지](https://github.com/ykmr0331/myProject/assets/117189519/1fdf2b42-b5a5-4364-9269-5d5bbd7cc7b0)
+
+
+﻿- FIFA Portal의 게시글 작성 페이지
+
+﻿- 로그인시 게시판 목록에서 접근 가능
+
+﻿- Dto와 Session을 이용해 게시글의 제목과 내용을 서버로 가져옴
+
+﻿- Annotation을 사용해 비밀글 여부의 기본값을 공개 지정
+       
+<br><br><br>
+
+
 
 </details>
 
