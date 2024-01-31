@@ -52,7 +52,7 @@
 <details>
 <summary></summary>
 
-## 1. 메인 페이지(Front-End)
+## 1. 메인 페이지
 
 
 ![스크린샷 2024-01-30 232615](https://github.com/ykmr0331/myProject/assets/117189519/42c674df-9dac-4ef0-b1d0-3db96fe0ce6a)
@@ -64,6 +64,24 @@
 
 
 ﻿- Thymeleaf를 사용하여 공통구조를 가진 웹 페이지 구현
+       
+<br><br><br>
+
+
+## 1. 로그인 페이지
+
+
+![로그인 페이지 화면](https://github.com/ykmr0331/myProject/assets/117189519/0607f988-c0a2-4df1-a34c-8983c097a2ed)
+
+
+
+﻿- FIFA Portal의 로그인 화면
+
+﻿- 로그인 시 jQuery Ajax로 서버와 비동기 통신
+
+﻿- Restful API를 기반으로 로그인 처리
+
+- Kakao API를 이용하여 통합 로그인 기능을 구
        
 <br><br><br>
 
