@@ -98,11 +98,17 @@
 ![회원정보수정페이지](https://github.com/ykmr0331/myProject/assets/117189519/485a06df-12c7-4aa7-896d-f187dacb0da6)
 
 
-- This Shoes 프로젝트의 회원정보 수 페이지
+- This Shoes 프로젝트의 회원정보 수정 페이지
   
-- Javascript를 활용하여 유효성 감사 및 아이디 중복체크
+- Javascript를 활용하여 회원 정보 수정 시 유효성 검사
+
+- session을 이용해 로그인 체크 후 로그인시 수정페이지 접근 가능
+
 
 <br><br>
+
+
+
 
 
 
