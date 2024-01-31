@@ -66,6 +66,29 @@
 - jsp:include를 활용하여 각 페이지에 일관된 헤더와 사이드 메뉴 포함(유지보수성 향상)
 
 
+## 2. 회원가입 페이지
+
+![회원가입 페이지](https://github.com/ykmr0331/myProject/assets/117189519/95ccba91-8462-457b-b791-f3157c0b009d)
+
+
+- This Shoes 프로젝트의 회원가입 페이지
+  
+- Javascript를 활용하여 유효성 감사 및 아이디 중복체크
+
+
+
+## 3. 로그인 페이
+
+![회원가입 페이지](https://github.com/ykmr0331/myProject/assets/117189519/95ccba91-8462-457b-b791-f3157c0b009d)
+
+
+- This Shoes 프로젝트의 회원가입 페이지
+  
+- Javascript를 활용하여 유효성 감사 및 아이디 중복체크
+
+
+
+
 
 
 </details>
