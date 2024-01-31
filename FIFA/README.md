@@ -86,6 +86,62 @@
 <br><br><br>
 
 
+
+## 3. 선수 목록 페이지
+
+
+![로그인 페이지 화면](https://github.com/ykmr0331/myProject/assets/117189519/0607f988-c0a2-4df1-a34c-8983c097a2ed)
+
+
+
+﻿- FIFA Portal의 선수 목록 페이지
+
+﻿- Model과 Thymeleaf로 동적 HTML 생성
+
+﻿- Spring Data JPA Query Method로 선수 검색 구현
+
+- Spring Web 인터페이스를 이용해 관리자 권한으로 선수 이미지 업로
+       
+<br><br><br>
+
+
+
+
+## 4. 클 목록 페이지
+
+
+![클럽 목록 페이지](https://github.com/ykmr0331/myProject/assets/117189519/ad557840-a302-4323-8e2a-a7972e47189c)
+
+
+﻿- FIFA Portal의 클럽 목록 페이지
+
+﻿- Model과 Thymeleaf로 동적 HTML 생성
+
+﻿- Spring Data JPA Query Method로 선수 검색 구현
+
+- Spring Web 인터페이스를 이용해 관리자 권한으로 클럽 로고 이미지 업로드
+       
+<br><br><br>
+
+
+
+## 5. 이적 목록 페이
+
+
+![이적시장 목록 페이지](https://github.com/ykmr0331/myProject/assets/117189519/2c6ed359-db41-4f53-9f94-52f73e0635c3)
+
+
+﻿- FIFA Portal의 이적 목록 페이지
+
+﻿- Model과 Thymeleaf로 동적 HTML 생성
+
+﻿- Thymeleaf로 날짜 및 숫자를 사용자 친화적 형식으로 표시
+
+       
+<br><br><br>
+
+
+
 </details>
 
 
