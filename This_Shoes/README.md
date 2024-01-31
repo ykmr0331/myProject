@@ -64,7 +64,7 @@
 <br><br>
 
 <details>
-<summary>클릭하여 나의 파트 상세내용을 확인하세요.</summary>
+<summary> 내 파트 상세보기</summary>
 
 <br><br>
 
