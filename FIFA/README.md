@@ -195,9 +195,7 @@
 ## 9. 선수, 클럽, 이적시장 관리 페이지
 
 
-![선수생성](https://github.com/ykmr0331/myProject/assets/117189519/60ed65fb-224a-46ba-a20a-3e4f82bef016)
-![클럽생성](https://github.com/ykmr0331/myProject/assets/117189519/20a05df0-f87a-462b-a86a-dabc89f7e788)
-![이적생성](https://github.com/ykmr0331/myProject/assets/117189519/fdc0609e-53df-40cc-949e-374adec4189f)
+![관리자 생성](https://github.com/ykmr0331/myProject/assets/117189519/13d429e6-c02d-4756-bb6a-90d0e93007b9)
 
 
 
