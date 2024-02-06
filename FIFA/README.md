@@ -99,7 +99,7 @@
 
 ﻿- Spring Data JPA Query Method로 선수 검색 구현
 
-﻿- Spring Web 인터페이스를 이용해 관리자 권한으로 선수 이미지 업로
+﻿- Spring Web 인터페이스를 이용해 관리자 권한으로 선수 이미지 업로드드
        
 <br><br><br>
 
